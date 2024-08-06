@@ -1,0 +1,836 @@
+{
+  "Alert Message  -SnipGenius": {
+    "prefix": "alert",
+    "body": ["alert('$1');"],
+    "description": "Displays an alert with a message."
+  },
+  "Prompt User  -SnipGenius": {
+    "prefix": "prompt",
+    "body": ["const input = prompt('$1');", "console.log(input);"],
+    "description": "Prompts the user for input and logs it to the console."
+  },
+  "Declare Variable  -SnipGenius": {
+    "prefix": "let",
+    "body": ["let name = $1;", "$0"],
+    "description": "Declares a variable."
+  },
+  "Function Declaration  -SnipGenius": {
+    "prefix": "func",
+    "body": ["function functionName(params) {", "  $1", "}"],
+    "description": "Declares a function. Replace functionName with the function name and params with parameters."
+  },
+  "Arrow Function  -SnipGenius": {
+    "prefix": "arrow",
+    "body": ["const functionName = (params) => {", "  $1", "};"],
+    "description": "Creates an arrow function. Replace functionName with the function name and params with parameters."
+  },
+  "For Loop  -SnipGenius": {
+    "prefix": "for",
+    "body": ["for (let i = 0; i < $1; i++) {", "  $2", "}"],
+    "description": "Creates a for loop."
+  },
+  "While Loop  -SnipGenius": {
+    "prefix": "while",
+    "body": ["let i = 0", "while (condition) {", "  $1", "i++", "}"],
+    "description": "Creates a while loop."
+  },
+  "Switch Statement  -SnipGenius": {
+    "prefix": "switch",
+    "body": [
+      "switch (variable) {",
+      "  case $1:",
+      "    $2",
+      "    break;",
+      "case $3:",
+      "$4",
+      "break",
+      "  default:",
+      "    $0",
+      "}"
+    ],
+    "description": "Creates a switch statement."
+  },
+  "Try-Catch  -SnipGenius": {
+    "prefix": "trycatch",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (error) {",
+      "  console.error(error);",
+      "}"
+    ],
+    "description": "Creates a try-catch block for error handling."
+  },
+  "Object Declaration  -SnipGenius": {
+    "prefix": "object",
+    "body": ["const name = {", "  key1: '$1',", "  key2: '$2'", "};"],
+    "description": "Declares an object with two key-value pairs."
+  },
+  "Array Declaration  -SnipGenius": {
+    "prefix": "array",
+    "body": ["const name = ['', '', ''];"],
+    "description": "Declares an array with three elements."
+  },
+  "Date Object  -SnipGenius": {
+    "prefix": "date",
+    "body": ["const date = new Date('$1');", "console.log(date);"],
+    "description": "Creates a new Date object."
+  },
+  "Fetch API Request  -SnipGenius": {
+    "prefix": "fetch",
+    "body": [
+      "fetch('url')",
+      "  .then(response => response.json())",
+      "  .then(data => {",
+      "    console.log(data);",
+      "  })",
+      "  .catch(error => {",
+      "    console.error('Error:', error);",
+      "  });"
+    ],
+    "description": "Performs a GET request using the Fetch API."
+  },
+  "Local Storage Get Item  -SnipGenius": {
+    "prefix": "getlocal",
+    "body": [
+      "const value = localStorage.getItem('key');",
+      "console.log(value);"
+    ],
+    "description": "Gets an item from local storage."
+  },
+  "Local Storage Set Item  -SnipGenius": {
+    "prefix": "setlocal",
+    "body": ["localStorage.setItem('key', 'value');"],
+    "description": "Sets an item in local storage."
+  },
+  "Session Storage Get Item  -SnipGenius": {
+    "prefix": "getsession",
+    "body": [
+      "const value = sessionStorage.getItem('key');",
+      "console.log(value);"
+    ],
+    "description": "Gets an item from session storage. "
+  },
+  "Session Storage Set Item  -SnipGenius": {
+    "prefix": "setsession",
+    "body": ["sessionStorage.setItem('key', 'value');"],
+    "description": "Sets an item in session storage."
+  },
+  "Event Listener  -SnipGenius": {
+    "prefix": "addevent",
+    "body": ["element.addEventListener('event', (e) => {", "  $2", "});"],
+    "description": "Adds an event listener to an element."
+  },
+  "Debounce Function  -SnipGenius": {
+    "prefix": "debounce",
+    "body": [
+      "function debounce(func, delay) {",
+      "  let timer;",
+      "  return function(...args) {",
+      "    clearTimeout(timer);",
+      "    timer = setTimeout(() => func.apply(this, args), delay);",
+      "  };",
+      "}"
+    ],
+    "description": "Creates a debounce function to limit the rate at which a function is executed."
+  },
+
+  "Generate UUID  -SnipGenius": {
+    "prefix": "uuid",
+    "body": [
+      "function generateUUID() {",
+      "  return 'xxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {",
+      "    const r = Math.random() * 16 | 0,",
+      "          v = c === 'x' ? r : (r & 0x3 | 0x8);",
+      "    return v.toString(16);",
+      "  });",
+      "}"
+    ],
+    "description": "Generates a UUID."
+  },
+  "Array Contains  -SnipGenius": {
+    "prefix": "includes",
+    "body": ["const result = array.includes($2);"],
+    "description": "Checks if an array contains a specific element."
+  },
+  "Fetch Data with Error Handling  -SnipGenius": {
+    "prefix": "fetchError",
+    "body": [
+      "async function fetchData(url) {",
+      "    try {",
+      "        const response = await fetch(url);",
+      "        if (!response.ok) throw new Error('Network response was not ok');",
+      "        return await response.json();",
+      "    } catch (error) {",
+      "        console.error('Fetch error:', error);",
+      "    }",
+      "}"
+    ],
+    "description": "Fetches data from an API and handles errors."
+  },
+  "Check Array Duplicates  -SnipGenius": {
+    "prefix": "hasDuplicates",
+    "body": [
+      "function hasDuplicates(array) {",
+      "    return new Set(array).size !== array.length;",
+      "}"
+    ],
+    "description": "Checks if an array contains duplicate values."
+  },
+  "Form Data to Object  -SnipGenius": {
+    "prefix": "formDataToObject",
+    "body": [
+      "function formDataToObject(formData) {",
+      "    const obj = {};",
+      "    formData.forEach((value, key) => {",
+      "        obj[key] = value;",
+      "    });",
+      "    return obj;",
+      "}"
+    ],
+    "description": "Converts form data into a JavaScript object."
+  },
+  "Capitalize Words  -SnipGenius": {
+    "prefix": "capitalizeWords",
+    "body": [
+      "function capitalizeWords(str) {",
+      "    return str.toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase());",
+      "}"
+    ],
+    "description": "Capitalizes the first letter of each word in a string."
+  },
+  "Check Palindrome  -SnipGenius": {
+    "prefix": "isPalindrome",
+    "body": [
+      "function isPalindrome(str) {",
+      "    const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, '');",
+      "    return cleaned === cleaned.split('').reverse().join('');",
+      "}"
+    ],
+    "description": "Checks if a string is the same forwards and backwards."
+  },
+  "Format Currency  -SnipGenius": {
+    "prefix": "formatCurrency",
+    "body": [
+      "function formatCurrency(amount, currency = 'USD') {",
+      "    return new Intl.NumberFormat('en-US', {",
+      "        style: 'currency',",
+      "        currency: currency",
+      "    }).format(amount);",
+      "}"
+    ],
+    "description": "Formats a number as currency."
+  },
+  "AJAX Request with XMLHttpRequest  -SnipGenius": {
+    "prefix": "ajaxRequest",
+    "body": [
+      "function fetchData(url, callback) {",
+      "    const xhr = new XMLHttpRequest();",
+      "    xhr.open('GET', url, true);",
+      "    xhr.onload = function() {",
+      "        if (xhr.status >= 200 && xhr.status < 300) {",
+      "            callback(null, JSON.parse(xhr.responseText));",
+      "        } else {",
+      "            callback(new Error('Request failed with status ' + xhr.status));",
+      "        }",
+      "    };",
+      "    xhr.onerror = function() {",
+      "        callback(new Error('Network error'));",
+      "    };",
+      "    xhr.send();",
+      "}"
+    ],
+    "description": "Makes an AJAX request using XMLHttpRequest."
+  },
+  "jQuery AJAX GET Request -SnipGenius": {
+    "prefix": "jqAjaxGet",
+    "body": [
+      "$.ajax({",
+      "    url: '${1:http://example.com/api}',",
+      "    type: 'GET',",
+      "    success: function(data) {",
+      "        console.log(data);",
+      "    },",
+      "    error: function(xhr, status, error) {",
+      "        console.error('AJAX Error:', error);",
+      "    }",
+      "});"
+    ],
+    "description": "Makes a GET request using jQuery AJAX."
+  },
+  "jQuery AJAX POST Request -SnipGenius": {
+    "prefix": "jqAjaxPost",
+    "body": [
+      "$.ajax({",
+      "    url: '${1:http://example.com/api}',",
+      "    type: 'POST',",
+      "    data: ${2:{ key1: 'value1', key2: 'value2' }},",
+      "    success: function(data) {",
+      "        console.log(data);",
+      "    },",
+      "    error: function(xhr, status, error) {",
+      "        console.error('AJAX Error:', error);",
+      "    }",
+      "});"
+    ],
+    "description": "Makes a POST request using jQuery AJAX."
+  },
+  "jQuery AJAX -SnipGenius": {
+    "prefix": "jqAjax",
+    "body": [
+      "$.ajax({",
+      "    url: '${1:http://example.com/api}',",
+      "    type: '${2:GET}',",
+      "    dataType: '${3:json}',",
+      "    success: function(data) {",
+      "        console.log(data);",
+      "    },",
+      "    error: function(xhr, status, error) {",
+      "        console.error('AJAX Error:', error);",
+      "    }",
+      "});"
+    ],
+    "description": "Makes an AJAX request using jQuery with a specified data type."
+  },
+  "jQuery AJAX Request with Headers -SnipGenius": {
+    "prefix": "jqAjaxHeaders",
+    "body": [
+      "$.ajax({",
+      "    url: '${1:http://example.com/api}',",
+      "    type: '${2:GET}',",
+      "    headers: {",
+      "        'Authorization': 'Bearer ${3:token}',",
+      "        'Another-Header': 'HeaderValue'",
+      "    },",
+      "    success: function(data) {",
+      "        console.log(data);",
+      "    },",
+      "    error: function(xhr, status, error) {",
+      "        console.error('AJAX Error:', error);",
+      "    }",
+      "});"
+    ],
+    "description": "Makes an AJAX request using jQuery with custom headers."
+  },
+  "Select Element by ID -SnipGenius": {
+    "prefix": "selectById",
+    "body": ["const element = document.getElementById('${1:elementId}');"],
+    "description": "Selects an element by its ID."
+  },
+  "Select Elements by Class Name -SnipGenius": {
+    "prefix": "selectByClass",
+    "body": [
+      "const elements = document.getElementsByClassName('${1:className}');"
+    ],
+    "description": "Selects elements by their class name."
+  },
+  "Select Elements by Tag Name -SnipGenius": {
+    "prefix": "selectByTag",
+    "body": ["const elements = document.getElementsByTagName('${1:tagName}');"],
+    "description": "Selects elements by their tag name."
+  },
+  "Select Single Element by Query Selector -SnipGenius": {
+    "prefix": "selectQuery",
+    "body": ["const element = document.querySelector('${1:selector}');"],
+    "description": "Selects a single element using a Query selector."
+  },
+  "Select Multiple Elements by Query Selector -SnipGenius": {
+    "prefix": "selectQueryAll",
+    "body": ["const elements = document.querySelectorAll('${1:selector}');"],
+    "description": "Selects multiple elements using a Query selector."
+  },
+  "Create a New Element -SnipGenius": {
+    "prefix": "createElement",
+    "body": ["const newElement = document.createElement('${1:tagName}');"],
+    "description": "Creates a new HTML element."
+  },
+  "Append Element to Parent -SnipGenius": {
+    "prefix": "appendChild",
+    "body": [
+      "const parentElement = document.querySelector('${1:parentSelector}');",
+      "const childElement = document.createElement('${2:childTag}');",
+      "parentElement.appendChild(childElement);"
+    ],
+    "description": "Appends a child element to a parent element."
+  },
+  "Remove Element -SnipGenius": {
+    "prefix": "removeElement",
+    "body": [
+      "const element = document.querySelector('${1:selector}');",
+      "if (element) {",
+      "    element.remove();",
+      "}"
+    ],
+    "description": "Removes an element from the DOM."
+  },
+  "Set Element Text Content -SnipGenius": {
+    "prefix": "setTextContent",
+    "body": [
+      "const element = document.querySelector('${1:selector}');",
+      "if (element) {",
+      "    element.textContent = '${2:text}';",
+      "}"
+    ],
+    "description": "Sets the text content of an element."
+  },
+  "Set Element HTML Content -SnipGenius": {
+    "prefix": "setHTML",
+    "body": [
+      "const element = document.querySelector('${1:selector}');",
+      "if (element) {",
+      "    element.innerHTML = '${2:html}';",
+      "}"
+    ],
+    "description": "Sets the HTML content of an element."
+  },
+  "Add Event Listener -SnipGenius": {
+    "prefix": "addEventListener",
+    "body": [
+      "const element = document.querySelector('${1:selector}');",
+      "if (element) {",
+      "    element.addEventListener('${2:event}', function(event) {",
+      "        ${3:// handler code}",
+      "    });",
+      "}"
+    ],
+    "description": "Adds an event listener to an element."
+  },
+  "Generate Random Number -SnipGenius": {
+    "prefix": "randNum",
+    "body": [
+      "const randomNum = Math.floor(Math.random() * (${1:max} - ${2:min} + 1)) + ${2:min};"
+    ],
+    "description": "Generates a random number between a minimum and maximum value."
+  },
+  "Check for Empty Object -SnipGenius": {
+    "prefix": "isEmptyObject",
+    "body": [
+      "function isEmptyObject(obj) {",
+      "    return Object.keys(obj).length === 0 && obj.constructor === Object;",
+      "}"
+    ],
+    "description": "Checks if an object is empty (has no properties)."
+  },
+  "Merge Objects -SnipGenius": {
+    "prefix": "mergeObjects",
+    "body": ["const merged = Object.assign({}, ${1:obj1}, ${2:obj2});"],
+    "description": "Merges two or more objects into one."
+  },
+  "Clone Array -SnipGenius": {
+    "prefix": "cloneArray",
+    "body": ["const clonedArray = [...${1:originalArray}];"],
+    "description": "Clones an array using the spread operator."
+  },
+  "Form Data to JSON -SnipGenius": {
+    "prefix": "formToJSON",
+    "body": [
+      "function formDataToJSON(formData) {",
+      "    const obj = {};",
+      "    formData.forEach((value, key) => {",
+      "        obj[key] = value;",
+      "    });",
+      "    return obj;",
+      "}",
+      "",
+      "const form = document.querySelector('${1:formSelector}');",
+      "const formData = new FormData(form);",
+      "const jsonData = formDataToJSON(formData);"
+    ],
+    "description": "Converts FormData to a JSON object."
+  },
+  "Add CSS Class to Element -SnipGenius": {
+    "prefix": "addClass",
+    "body": [
+      "const element = document.querySelector('${1:selector}');",
+      "if (element) {",
+      "    element.classList.add('${2:className}');",
+      "}"
+    ],
+    "description": "Adds a CSS class to an element."
+  },
+  "Remove CSS Class from Element -SnipGenius": {
+    "prefix": "removeClass",
+    "body": [
+      "const element = document.querySelector('${1:selector}');",
+      "if (element) {",
+      "    element.classList.remove('${2:className}');",
+      "}"
+    ],
+    "description": "Removes a CSS class from an element."
+  },
+  "Toggle CSS Class on Element -SnipGenius": {
+    "prefix": "toggleClass",
+    "body": [
+      "const element = document.querySelector('${1:selector}');",
+      "if (element) {",
+      "    element.classList.toggle('${2:className}');",
+      "}"
+    ],
+    "description": "Toggles a CSS class on an element."
+  },
+  "Convert NodeList to Array -SnipGenius": {
+    "prefix": "nodeListToArray",
+    "body": [
+      "const array = Array.from(document.querySelectorAll('${1:selector}'));"
+    ],
+    "description": "Converts a NodeList to an Array."
+  },
+  "Get URL Parameters -SnipGenius": {
+    "prefix": "getURLParams",
+    "body": [
+      "function getURLParams() {",
+      "    const params = new URLSearchParams(window.location.search);",
+      "    const obj = {};",
+      "    params.forEach((value, key) => {",
+      "        obj[key] = value;",
+      "    });",
+      "    return obj;",
+      "}",
+      "",
+      "const queryParams = getURLParams();"
+    ],
+    "description": "Gets URL parameters as an object."
+  },
+  "Arrow Function with Implicit Return -SnipGenius": {
+    "prefix": "arrowFuncImplicit",
+    "body": ["const ${1:functionName} = (${2:parameters}) => ${3:expression};"],
+    "description": "Creates an arrow function with an implicit return."
+  },
+  "Arrow Function for Array map -SnipGenius": {
+    "prefix": "mapArrowFunc",
+    "body": [
+      "${1:array}.map(${2:element} => {",
+      "    ${3:// transform element}",
+      "});"
+    ],
+    "description": "Creates an arrow function to use with the `map` method."
+  },
+  "Arrow Function for Array filter -SnipGenius": {
+    "prefix": "filterArrowFunc",
+    "body": [
+      "${1:array}.filter(${2:element} => {",
+      "    ${3:// condition}",
+      "});"
+    ],
+    "description": "Creates an arrow function to use with the `filter` method."
+  },
+  "Arrow Function for Array reduce -SnipGenius": {
+    "prefix": "reduceArrowFunc",
+    "body": [
+      "${1:array}.reduce((${2:accumulator}, ${3:currentValue}) => {",
+      "    ${4:// calculation}",
+      "}, ${5:initialValue});"
+    ],
+    "description": "Creates an arrow function to use with the `reduce` method."
+  },
+  "Arrow Function with Object Destructuring -SnipGenius": {
+    "prefix": "arrowFuncDestruct",
+    "body": [
+      "const ${1:functionName} = ({ ${2:prop1}, ${3:prop2} }) => {",
+      "    ${4:// function body}",
+      "};"
+    ],
+    "description": "Creates an arrow function with object destructuring in parameters."
+  },
+  "Arrow Function with Array Destructuring -SnipGenius": {
+    "prefix": "arrowFuncArrayDestruct",
+    "body": [
+      "const ${1:functionName} = ([${2:element1}, ${3:element2}]) => {",
+      "    ${4:// function body}",
+      "};"
+    ],
+    "description": "Creates an arrow function with array destructuring in parameters."
+  },
+  "Arrow Function for Event Listener -SnipGenius": {
+    "prefix": "arrowEventListener",
+    "body": [
+      "document.querySelector('${1:selector}').addEventListener('${2:event}', (${3:event}) => {",
+      "    ${4:// handler code}",
+      "});"
+    ],
+    "description": "Creates an arrow function to use as an event listener."
+  },
+
+  // es6
+  "Import - SnipGenius": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}';$0",
+    "description": "Imports an entire module statement in ES6 syntax - SnipGenius"
+  },
+
+  "Import Destructing - SnipGenius": {
+    "prefix": "imd",
+    "body": "import { $2 } from '${1:module}';$0",
+    "description": "Imports only a portion of the module in ES6 syntax - SnipGenius"
+  },
+
+  "Import Everything - SnipGenius": {
+    "prefix": "ime",
+    "body": "import * as ${2:alias} from '${1:module}';$0",
+    "description": "Imports everything from the module as an alias in ES6 syntax - SnipGenius"
+  },
+
+  "Import As - SnipGenius": {
+    "prefix": "ima",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}';$0",
+    "description": "Imports a specific portion of the module by assigning a local alias in ES6 syntax - SnipGenius"
+  },
+
+  "Require - SnipGenius": {
+    "prefix": "rqr",
+    "body": "require('${1:package}');",
+    "description": "Requires a package using CommonJS syntax - SnipGenius"
+  },
+
+  "Require to Const - SnipGenius": {
+    "prefix": "req",
+    "body": "const ${1:packageName} = require('${1:package}');$0",
+    "description": "Requires a package and assigns it to a const variable - SnipGenius"
+  },
+
+  "Module Exports - SnipGenius": {
+    "prefix": "mde",
+    "body": "module.exports = {\n\t$0\n};\n",
+    "description": "Exports a module using CommonJS syntax - SnipGenius"
+  },
+
+  "Export Named Variable - SnipGenius": {
+    "prefix": "env",
+    "body": "export const ${1:exportVariable} = ${2:localVariable};\n",
+    "description": "Exports a named variable in ES6 syntax - SnipGenius"
+  },
+
+  "Export Named Function - SnipGenius": {
+    "prefix": "enf",
+    "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n};\n",
+    "description": "Exports a named function in ES6 syntax - SnipGenius"
+  },
+
+  "Export Default Function - SnipGenius": {
+    "prefix": "edf",
+    "body": "export default function ${1:${TM_FILENAME_BASE}}(${2:params}) {\n\t$0\n};\n",
+    "description": "Exports a default function in ES6 syntax - SnipGenius"
+  },
+
+  "Export Class - SnipGenius": {
+    "prefix": "ecl",
+    "body": "export default class ${1:className} {\n\t$0\n};\n",
+    "description": "Exports a default class in ES6 syntax - SnipGenius"
+  },
+
+  "Export Class Extends - SnipGenius": {
+    "prefix": "ece",
+    "body": "export default class ${1:className} extends ${2:baseClassName} {\n\t$0\n};\n",
+    "description": "Exports a default class that extends a base class in ES6 syntax - SnipGenius"
+  },
+
+  "Constructor - SnipGenius": {
+    "prefix": "_c",
+    "body": "constructor(${1:params}) {\n\t${0}\n}",
+    "description": "Adds a default constructor in a class in ES6 syntax - SnipGenius"
+  },
+
+  "Method - SnipGenius": {
+    "prefix": "met",
+    "body": "${1:methodName}(${2:params}) {\n\t${0}\n}",
+    "description": "Creates a method inside a class in ES6 syntax - SnipGenius"
+  },
+
+  "Property Get - SnipGenius": {
+    "prefix": "pge",
+    "body": "get ${1:propertyName}() {\n\treturn this.${0};\n}",
+    "description": "Creates a getter property inside a class in ES6 syntax - SnipGenius"
+  },
+
+  "Property Set - SnipGenius": {
+    "prefix": "pse",
+    "body": "set ${1:propertyName}(${2:value}) {\n\t${0};\n}",
+    "description": "Creates a setter property inside a class in ES6 syntax - SnipGenius"
+  },
+
+  "For Each - SnipGenius": {
+    "prefix": "foreach",
+    "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n});",
+    "description": "Creates a forEach statement in ES6 syntax - SnipGenius"
+  },
+
+  "For Of - SnipGenius": {
+    "prefix": "forof",
+    "body": "for (const ${1:item} of ${2:object}) {\n\t${0}\n}",
+    "description": "Iterates over property names of iterable objects - SnipGenius"
+  },
+
+  "For In - SnipGenius": {
+    "prefix": "forin",
+    "body": "for (const ${1:item} in ${2:object}) {\n\t${0}\n}",
+    "description": "Iterates over property values of iterable objects - SnipGenius"
+  },
+
+  "Anonymous Function - SnipGenius": {
+    "prefix": "anfn",
+    "body": "(${1:params}) => {\n\t${2}\n}",
+    "description": "Creates an anonymous function in ES6 syntax - SnipGenius"
+  },
+
+  "Named Function - SnipGenius": {
+    "prefix": "nfn",
+    "body": "const ${1:name} = (${2:params}) => {\n\t${3}\n}",
+    "description": "Creates a named function in ES6 syntax - SnipGenius"
+  },
+
+  "Destructing Object - SnipGenius": {
+    "prefix": "dob",
+    "body": "const {${2:propertyName}} = ${1:objectToDestruct};",
+    "description": "Creates and assigns a local variable using object destructuring - SnipGenius"
+  },
+
+  "Destructing Array - SnipGenius": {
+    "prefix": "dar",
+    "body": "const [${2:propertyName}] = ${1:arrayToDestruct};",
+    "description": "Creates and assigns a local variable using array destructuring - SnipGenius"
+  },
+
+  "Set Interval - SnipGenius": {
+    "prefix": "sti",
+    "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInMs});",
+    "description": "Executes a function at specified intervals in ES6 syntax - SnipGenius"
+  },
+
+  "Set Timeout - SnipGenius": {
+    "prefix": "sto",
+    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInMs});",
+    "description": "Executes a function after a specified delay in ES6 syntax - SnipGenius"
+  },
+
+  "Promise - SnipGenius": {
+    "prefix": "prom",
+    "body": "return new Promise((resolve, reject) => {\n\t${1}\n});",
+    "description": "Creates and returns a new Promise in standard ES6 syntax - SnipGenius"
+  },
+
+  "Then Catch - SnipGenius": {
+    "prefix": "thenc",
+    "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n});",
+    "description": "Adds .then and .catch methods to handle promises - SnipGenius"
+  },
+
+  "Console Assert - SnipGenius": {
+    "prefix": "cas",
+    "body": "console.assert(${1:expression}, ${2:object});",
+    "description": "If the specified expression is false, writes a message to the console with a stack trace - SnipGenius"
+  },
+
+  "Console Clear - SnipGenius": {
+    "prefix": "ccl",
+    "body": "console.clear();",
+    "description": "Clears the console - SnipGenius"
+  },
+
+  "Console Count - SnipGenius": {
+    "prefix": "cco",
+    "body": "console.count(${1:label});",
+    "description": "Writes the number of times count() has been invoked with the same label - SnipGenius"
+  },
+
+  "Console Debug - SnipGenius": {
+    "prefix": "cdb",
+    "body": "console.debug(${1:object});",
+    "description": "Displays a debug message in the console with a blue right arrow icon in Safari - SnipGenius"
+  },
+
+  "Console Dir - SnipGenius": {
+    "prefix": "cdi",
+    "body": "console.dir(${1:object});",
+    "description": "Prints a JavaScript representation of the specified object - SnipGenius"
+  },
+  /// not working from here
+  "Console Error - SnipGenius": {
+    "prefix": "cer",
+    "body": "console.error(${1:object});",
+    "description": "Displays an error message in the console with a stack trace - SnipGenius"
+  },
+
+  "Console Group - SnipGenius": {
+    "prefix": "cgr",
+    "body": "console.group('${1:label}');",
+    "description": "Groups and indents all following output by an additional level until console.groupEnd() is called - SnipGenius"
+  },
+
+  "Console Group End - SnipGenius": {
+    "prefix": "cge",
+    "body": "console.groupEnd();",
+    "description": "Closes out the corresponding console.group() - SnipGenius"
+  },
+
+  "Console Log - SnipGenius": {
+    "prefix": "clg",
+    "body": "console.log(${1:object});",
+    "description": "Displays a message in the console - SnipGenius"
+  },
+
+  "Console Log Object - SnipGenius": {
+    "prefix": "clgo",
+    "body": "console.log('${1:object} :>> ', ${1:object});",
+    "description": "Displays an object in the console with its name - SnipGenius"
+  },
+
+  "Console Trace - SnipGenius": {
+    "prefix": "ctr",
+    "body": "console.trace(${1:object});",
+    "description": "Prints a stack trace from the point where the method was called - SnipGenius"
+  },
+
+  "Console Warn - SnipGenius": {
+    "prefix": "cwa",
+    "body": "console.warn(${1:object});",
+    "description": "Displays a warning message in the console with a yellow warning icon - SnipGenius"
+  },
+
+  "Console Info - SnipGenius": {
+    "prefix": "cin",
+    "body": "console.info(${1:object});",
+    "description": "Displays an informational message in the console with a blue information icon - SnipGenius"
+  },
+
+  "Console Table - SnipGenius": {
+    "prefix": "clt",
+    "body": "console.table(${1:object});",
+    "description": "Displays tabular data as a table - SnipGenius"
+  },
+
+  "Console Time - SnipGenius": {
+    "prefix": "cti",
+    "body": "console.time(${1:label});",
+    "description": "Sets the starting point for execution time measurement - SnipGenius"
+  },
+
+  "Console Time End - SnipGenius": {
+    "prefix": "cte",
+    "body": "console.timeEnd(${1:label});",
+    "description": "Sets the end point for execution time measurement - SnipGenius"
+  },
+  "Object Destructuring - SnipGenius": {
+    "prefix": "obd",
+    "body": ["const { ${1:prop1}, ${2:prop2} } = ${3:object};"],
+    "description": "Object destructuring assignment"
+  },
+  "Nested Object Destructuring - SnipGenius": {
+    "prefix": "nobd",
+    "body": [
+      "const { ${1:prop1: { ${2:nestedProp1}, ${3:nestedProp2} }} } = ${4:object};"
+    ],
+    "description": "Nested object destructuring assignment"
+  },
+  "Array Destructuring - SnipGenius": {
+    "prefix": "ard",
+    "body": ["const [ ${1:item1}, ${2:item2} ] = ${3:array};"],
+    "description": "Array destructuring assignment"
+  },
+  "Nested Array Destructuring - SnipGenius": {
+    "prefix": "nard",
+    "body": [
+      "const [ ${1:item1, ${2:[ nestedItem1, nestedItem2] }} ] = ${3:array};"
+    ],
+    "description": "Nested array destructuring assignment"
+  }
+}

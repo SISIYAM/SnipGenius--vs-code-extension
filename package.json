@@ -1,0 +1,29 @@
+{
+  "name": "SnipGenius",
+  "displayName": "SnipGenius",
+  "description": "",
+  "version": "0.0.1",
+  "icon": "coding.png",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/html.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/php.code-snippets"
+      }
+    ]
+  }
+}

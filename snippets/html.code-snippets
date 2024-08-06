@@ -1,0 +1,766 @@
+{
+  "php start -SnipGenius": {
+    "prefix": "php",
+    "body": ["<?php ", "$1" "?>"]
+  },
+  "Input -SnipGenius": {
+    "prefix": "input",
+    "body": ["<input type=\"$1\" placeholder=\"$2\">"],
+    "description": "Creates an input field with placeholders"
+  },
+  "Label -SnipGenius": {
+    "prefix": "label",
+    "body": ["<label for=\"$1\">$2</label>"],
+    "description": "Adds a label with for attribute"
+  },
+  "HTML Table -SnipGenius": {
+    "prefix": "table",
+    "body": [
+        "<table class=\"table\">",
+        "    <thead>",
+        "        <tr>",
+        "            <th>${1:Header 1}</th>",
+        "            <th>${2:Header 2}</th>",
+        "            <th>${3:Header 3}</th>",
+        "        </tr>",
+        "    </thead>",
+        "    <tbody>",
+        "        <tr>",
+        "            <td>${4:Row 1, Cell 1}</td>",
+        "            <td>${5:Row 1, Cell 2}</td>",
+        "            <td>${6:Row 1, Cell 3}</td>",
+        "        </tr>",
+        "        <tr>",
+        "            <td>${7:Row 2, Cell 1}</td>",
+        "            <td>${8:Row 2, Cell 2}</td>",
+        "            <td>${9:Row 2, Cell 3}</td>",
+        "        </tr>",
+        "    </tbody>",
+        "</table>"
+    ],
+    "description": "Basic HTML table structure."
+},
+  "HTML Boilerplate -SnipGenius": {
+    "prefix": "html5",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>$1</title>",
+      "</head>",
+      "<body>",
+      "  $0",
+      "</body>",
+      "</html>"
+    ],
+    "description": "Generates a complete HTML5 document structure"
+  },
+  "Navigation Bar -SnipGenius": {
+    "prefix": "nav",
+    "body": [
+      "<nav>",
+      "  <ul>",
+      "    <li><a href=\"$1\">$2</a></li>",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "Adds a navigation bar"
+  },
+  "Footer -SnipGenius": {
+    "prefix": "footer",
+    "body": ["<footer>", "  <p>$1</p>", "</footer>"],
+    "description": "Creates a footer section"
+  },
+  "Header -SnipGenius": { 
+    "prefix": "header",
+    "body": ["<header>", "  <h1>$1</h1>", "</header>"],
+    "description": "Generates a header section"
+  },
+  "Section -SnipGenius": {
+    "prefix": "section",
+    "body": ["<section class=\"$1\">", "  $0", "</section>"],
+    "description": "Adds a section tag with an optional class"
+  },
+  "Image -SnipGenius": {
+    "prefix": "img",
+    "body": ["<img src=\"$1\" alt=\"$2\" title=\"$3\">"],
+    "description": "Inserts an image tag with src, alt, and title attributes"
+  },
+  "Video -SnipGenius": {
+    "prefix": "video",
+    "body": [
+      "<video controls>",
+      "  <source src=\"$1\" type=\"video/mp4\">",
+      "  Your browser does not support the video tag.",
+      "</video>"
+    ],
+    "description": "Creates a video tag with controls and source"
+  },
+
+  // bootstrap snippets
+
+  "Basic Bootstrap Boilerplate -SnipGenius": {
+    "prefix": "bootstrap",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "    <meta charset=\"UTF-8\">",
+      "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "    <title>${1:Document}</title>",
+      "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">",
+      "</head>",
+      "<body>",
+      "    <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>",
+      "    <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js\"></script>",
+      "    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>",
+      "</body>",
+      "</html>"
+    ],
+    "description": "Basic Bootstrap boilerplate with Bootstrap 4 CDN links."
+  },
+  "Bootstrap Container -SnipGenius": {
+    "prefix": "container",
+    "body": ["<div class=\"container\">", "    ${1:// content here}", "</div>"],
+    "description": "Bootstrap container for responsive fixed-width layout."
+  },
+  "Bootstrap Row and Columns -SnipGenius": {
+    "prefix": "row-cols",
+    "body": [
+      "<div class=\"container\">",
+      "    <div class=\"row\">",
+      "        <div class=\"col-${1:sm|md|lg|xl}\">${2:Column 1}</div>",
+      "        <div class=\"col-${1:sm|md|lg|xl}\">${3:Column 2}</div>",
+      "        <div class=\"col-${1:sm|md|lg|xl}\">${4:Column 3}</div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap row with columns. Adjust column sizes as needed."
+  },
+  "Bootstrap Navbar -SnipGenius": {
+    "prefix": "navbar",
+    "body": [
+      "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">",
+      "    <a class=\"navbar-brand\" href=\"#\">${1:Brand}</a>",
+      "    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">",
+      "        <span class=\"navbar-toggler-icon\"></span>",
+      "    </button>",
+      "    <div class=\"collapse navbar-collapse\" id=\"navbarNav\">",
+      "        <ul class=\"navbar-nav\">",
+      "            <li class=\"nav-item active\">",
+      "                <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>",
+      "            </li>",
+      "            <li class=\"nav-item\">",
+      "                <a class=\"nav-link\" href=\"#\">Features</a>",
+      "            </li>",
+      "            <li class=\"nav-item\">",
+      "                <a class=\"nav-link\" href=\"#\">Pricing</a>",
+      "            </li>",
+      "        </ul>",
+      "    </div>",
+      "</nav>"
+    ],
+    "description": "Bootstrap responsive navbar."
+  },
+  "Bootstrap Card -SnipGenius": {
+    "prefix": "card",
+    "body": [
+      "<div class=\"card\" style=\"width: ${1:18rem};\">",
+      "    <img src=\"${2:https://via.placeholder.com/150}\" class=\"card-img-top\" alt=\"...\">",
+      "    <div class=\"card-body\">",
+      "        <h5 class=\"card-title\">${3:Card title}</h5>",
+      "        <p class=\"card-text\">${4:Some quick example text to build on the card title and make up the bulk of the card's content.}</p>",
+      "        <a href=\"#\" class=\"btn btn-primary\">${5:Go somewhere}</a>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap card component."
+  },
+  "Bootstrap Modal -SnipGenius": {
+    "prefix": "modal",
+    "body": [
+      "<div class=\"modal fade\" id=\"${1:exampleModal}\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"${2:exampleModalLabel}\" aria-hidden=\"true\">",
+      "    <div class=\"modal-dialog\" role=\"document\">",
+      "        <div class=\"modal-content\">",
+      "            <div class=\"modal-header\">",
+      "                <h5 class=\"modal-title\" id=\"${2:exampleModalLabel}\">${3:Modal title}</h5>",
+      "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">",
+      "                    <span aria-hidden=\"true\">&times;</span>",
+      "                </button>",
+      "            </div>",
+      "            <div class=\"modal-body\">",
+      "                ${4:Modal body text goes here.}",
+      "            </div>",
+      "            <div class=\"modal-footer\">",
+      "                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>",
+      "                <button type=\"button\" class=\"btn btn-primary\">Save changes</button>",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap modal component."
+  },
+  "Bootstrap Grid System -SnipGenius": {
+    "prefix": "grid",
+    "body": [
+      "<div class=\"container\">",
+      "    <div class=\"row\">",
+      "        <div class=\"col-${1:sm|md|lg|xl}\">${2:Column 1}</div>",
+      "        <div class=\"col-${1:sm|md|lg|xl}\">${3:Column 2}</div>",
+      "        <div class=\"col-${1:sm|md|lg|xl}\">${4:Column 3}</div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap grid system with responsive columns."
+  },
+  "Bootstrap Alert -SnipGenius": {
+    "prefix": "alert",
+    "body": [
+      "<div class=\"alert alert-${1:success|info|warning|danger}\" role=\"alert\">",
+      "    ${2:This is a ${1:success} alert—check it out!}",
+      "</div>"
+    ],
+    "description": "Bootstrap alert component with different types."
+  },
+  "Bootstrap List Group -SnipGenius": {
+    "prefix": "listGroup",
+    "body": [
+      "<ul class=\"list-group\">",
+      "    <li class=\"list-group-item\">${1:First item}</li>",
+      "    <li class=\"list-group-item\">${2:Second item}</li>",
+      "    <li class=\"list-group-item\">${3:Third item}</li>",
+      "</ul>"
+    ],
+    "description": "Bootstrap list group component."
+  },
+  "Bootstrap Breadcrumb -SnipGenius": {
+    "prefix": "breadcrumb",
+    "body": [
+      "<nav aria-label=\"breadcrumb\">",
+      "    <ol class=\"breadcrumb\">",
+      "        <li class=\"breadcrumb-item\"><a href=\"#\">${1:Home}</a></li>",
+      "        <li class=\"breadcrumb-item active\" aria-current=\"page\">${2:Library}</li>",
+      "    </ol>",
+      "</nav>"
+    ],
+    "description": "Bootstrap breadcrumb navigation."
+  },
+  "Bootstrap Carousel -SnipGenius": {
+    "prefix": "carousel",
+    "body": [
+      "<div id=\"${1:carouselExampleIndicators}\" class=\"carousel slide\" data-ride=\"carousel\">",
+      "    <ol class=\"carousel-indicators\">",
+      "        <li data-target=\"#${1:carouselExampleIndicators}\" data-slide-to=\"0\" class=\"active\"></li>",
+      "        <li data-target=\"#${1:carouselExampleIndicators}\" data-slide-to=\"1\"></li>",
+      "        <li data-target=\"#${1:carouselExampleIndicators}\" data-slide-to=\"2\"></li>",
+      "    </ol>",
+      "    <div class=\"carousel-inner\">",
+      "        <div class=\"carousel-item active\">",
+      "            <img src=\"${2:https://via.placeholder.com/800x400}\" class=\"d-block w-100\" alt=\"...\">",
+      "            <div class=\"carousel-caption d-none d-md-block\">",
+      "                <h5>${3:First slide label}</h5>",
+      "                <p>${4:Some representative placeholder content for the first slide.}</p>",
+      "            </div>",
+      "        </div>",
+      "        <div class=\"carousel-item\">",
+      "            <img src=\"${5:https://via.placeholder.com/800x400}\" class=\"d-block w-100\" alt=\"...\">",
+      "            <div class=\"carousel-caption d-none d-md-block\">",
+      "                <h5>${6:Second slide label}</h5>",
+      "                <p>${7:Some representative placeholder content for the second slide.}</p>",
+      "            </div>",
+      "        </div>",
+      "        <div class=\"carousel-item\">",
+      "            <img src=\"${8:https://via.placeholder.com/800x400}\" class=\"d-block w-100\" alt=\"...\">",
+      "            <div class=\"carousel-caption d-none d-md-block\">",
+      "                <h5>${9:Third slide label}</h5>",
+      "                <p>${10:Some representative placeholder content for the third slide.}</p>",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "    <a class=\"carousel-control-prev\" href=\"#${1:carouselExampleIndicators}\" role=\"button\" data-slide=\"prev\">",
+      "        <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>",
+      "        <span class=\"sr-only\">Previous</span>",
+      "    </a>",
+      "    <a class=\"carousel-control-next\" href=\"#${1:carouselExampleIndicators}\" role=\"button\" data-slide=\"next\">",
+      "        <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>",
+      "        <span class=\"sr-only\">Next</span>",
+      "    </a>",
+      "</div>"
+    ],
+    "description": "Bootstrap carousel component."
+  },
+  "Bootstrap Jumbotron -SnipGenius": {
+    "prefix": "jumbotron",
+    "body": [
+      "<div class=\"jumbotron\">",
+      "    <h1 class=\"display-4\">${1:Hello, world!}</h1>",
+      "    <p class=\"lead\">${2:This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.}</p>",
+      "    <hr class=\"my-4\">",
+      "    <p>${3:It uses utility classes for typography and spacing to space content out within the larger container.}</p>",
+      "    <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">${4:Learn more}</a>",
+      "</div>"
+    ],
+    "description": "Bootstrap jumbotron component."
+  },
+  "Bootstrap Pagination -SnipGenius": {
+    "prefix": "pagination",
+    "body": [
+      "<nav aria-label=\"Page navigation\">",
+      "    <ul class=\"pagination\">",
+      "        <li class=\"page-item\"><a class=\"page-link\" href=\"#\" aria-label=\"Previous\">",
+      "            <span aria-hidden=\"true\">&laquo;</span>",
+      "        </a></li>",
+      "        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>",
+      "        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>",
+      "        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>",
+      "        <li class=\"page-item\"><a class=\"page-link\" href=\"#\" aria-label=\"Next\">",
+      "            <span aria-hidden=\"true\">&raquo;</span>",
+      "        </a></li>",
+      "    </ul>",
+      "</nav>"
+    ],
+    "description": "Bootstrap pagination component."
+  },
+  "Bootstrap Tooltip -SnipGenius": {
+    "prefix": "tooltip",
+    "body": [
+      "<button type=\"button\" class=\"btn btn-secondary\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"${1:Tooltip text}\">",
+      "    ${2:Hover me to see tooltip}",
+      "</button>",
+      "",
+      "<script>",
+      "    $(function () {",
+      "        $('[data-toggle=\"tooltip\"]').tooltip();",
+      "    });",
+      "</script>"
+    ],
+    "description": "Bootstrap tooltip component with initialization script."
+  },
+  "Bootstrap Form Inline -SnipGenius": {
+    "prefix": "formInline",
+    "body": [
+      "<form class=\"form-inline\">",
+      "    <label class=\"sr-only\" for=\"${1:inputEmail3}\">${2:Email}</label>",
+      "    <input type=\"email\" class=\"form-control mb-2 mr-sm-2\" id=\"${1:inputEmail3}\" placeholder=\"${3:Email}\">",
+      "    <label class=\"sr-only\" for=\"${4:inputPassword3}\">${5:Password}</label>",
+      "    <input type=\"password\" class=\"form-control mb-2 mr-sm-2\" id=\"${4:inputPassword3}\" placeholder=\"${6:Password}\">",
+      "    <div class=\"form-check mb-2 mr-sm-2\">",
+      "        <input class=\"form-check-input\" type=\"checkbox\" id=\"${7:check1}\">",
+      "        <label class=\"form-check-label\" for=\"${7:check1}\">${8:Remember me}</label>",
+      "    </div>",
+      "    <button type=\"submit\" class=\"btn btn-primary mb-2\">${9:Submit}</button>",
+      "</form>"
+    ],
+    "description": "Bootstrap inline form layout."
+  },
+  "Bootstrap Toast -SnipGenius": {
+    "prefix": "toast",
+    "body": [
+      "<div aria-live=\"polite\" aria-atomic=\"true\" class=\"position-relative\">",
+      "    <div class=\"toast\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">",
+      "        <div class=\"toast-header\">",
+      "            <strong class=\"mr-auto\">${1:Bootstrap}</strong>",
+      "            <small>${2:11 mins ago}</small>",
+      "            <button type=\"button\" class=\"ml-2 mb-1 close\" data-dismiss=\"toast\" aria-label=\"Close\">",
+      "                <span aria-hidden=\"true\">&times;</span>",
+      "            </button>",
+      "        </div>",
+      "        <div class=\"toast-body\">",
+      "            ${3:Hello, world! This is a toast message.}",
+      "        </div>",
+      "    </div>",
+      "</div>",
+      "",
+      "<script>",
+      "    $(function () {",
+      "        $('.toast').toast('show');",
+      "    });",
+      "</script>"
+    ],
+    "description": "Bootstrap toast component with initialization script."
+  },
+  "Bootstrap Offcanvas -SnipGenius": {
+    "prefix": "offcanvas",
+    "body": [
+      "<div class=\"offcanvas offcanvas-${1:start|end|top|bottom}\" tabindex=\"-1\" id=\"${2:offcanvasExample}\" aria-labelledby=\"${3:offcanvasLabel}\">",
+      "    <div class=\"offcanvas-header\">",
+      "        <h5 class=\"offcanvas-title\" id=\"${3:offcanvasLabel}\">${4:Offcanvas title}</h5>",
+      "        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\"></button>",
+      "    </div>",
+      "    <div class=\"offcanvas-body\">",
+      "        ${5:Your content here.}",
+      "    </div>",
+      "</div>",
+      "",
+      "<button class=\"btn btn-primary\" type=\"button\" data-bs-toggle=\"offcanvas\" data-bs-target=\"#${2:offcanvasExample}\" aria-controls=\"${2:offcanvasExample}\">",
+      "    ${6:Toggle Offcanvas}",
+      "</button>"
+    ],
+    "description": "Bootstrap offcanvas component."
+  },
+  "Bootstrap Toast with Header -SnipGenius": {
+    "prefix": "toastHeader",
+    "body": [
+      "<div class=\"toast\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">",
+      "    <div class=\"toast-header\">",
+      "        <strong class=\"mr-auto\">${1:Notification}</strong>",
+      "        <small>${2:Just now}</small>",
+      "        <button type=\"button\" class=\"ml-2 mb-1 close\" data-dismiss=\"toast\" aria-label=\"Close\">",
+      "            <span aria-hidden=\"true\">&times;</span>",
+      "        </button>",
+      "    </div>",
+      "    <div class=\"toast-body\">",
+      "        ${3:Here is some text to show in the body of the toast.}",
+      "    </div>",
+      "</div>",
+      "",
+      "<script>",
+      "    $(function () {",
+      "        $('.toast').toast('show');",
+      "    });",
+      "</script>"
+    ],
+    "description": "Bootstrap toast with header."
+  },
+  "Bootstrap Accordion -SnipGenius": {
+    "prefix": "accordion",
+    "body": [
+      "<div id=\"${1:accordionExample}\" class=\"accordion\" id=\"accordionExample\">",
+      "    <div class=\"accordion-item\">",
+      "        <h2 class=\"accordion-header\" id=\"${2:headingOne}\">",
+      "            <button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#${3:collapseOne}\" aria-expanded=\"true\" aria-controls=\"${3:collapseOne}\">",
+      "                ${4:Accordion Item #1}",
+      "            </button>",
+      "        </h2>",
+      "        <div id=\"${3:collapseOne}\" class=\"accordion-collapse collapse show\" aria-labelledby=\"${2:headingOne}\" data-bs-parent=\"#${1:accordionExample}\">",
+      "            <div class=\"accordion-body\">",
+      "                ${5:Content for the first accordion item.}",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "    <div class=\"accordion-item\">",
+      "        <h2 class=\"accordion-header\" id=\"${6:headingTwo}\">",
+      "            <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#${7:collapseTwo}\" aria-expanded=\"false\" aria-controls=\"${7:collapseTwo}\">",
+      "                ${8:Accordion Item #2}",
+      "            </button>",
+      "        </h2>",
+      "        <div id=\"${7:collapseTwo}\" class=\"accordion-collapse collapse\" aria-labelledby=\"${6:headingTwo}\" data-bs-parent=\"#${1:accordionExample}\">",
+      "            <div class=\"accordion-body\">",
+      "                ${9:Content for the second accordion item.}",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap accordion component."
+  },
+  "Bootstrap Floating Labels -SnipGenius": {
+    "prefix": "floatingLabel",
+    "body": [
+      "<div class=\"form-floating\">",
+      "    <input type=\"text\" class=\"form-control\" id=\"${1:inputId}\" placeholder=\"${2:Placeholder}\">",
+      "    <label for=\"${1:inputId}\">${3:Label}</label>",
+      "</div>"
+    ],
+    "description": "Bootstrap floating label for form controls."
+  },
+  "Bootstrap Placeholders -SnipGenius": {
+    "prefix": "placeholder",
+    "body": [
+      "<div class=\"placeholder-${1:lg|md|sm}\">",
+      "    ${2:Placeholder content goes here.}",
+      "</div>"
+    ],
+    "description": "Bootstrap placeholder component for loading states."
+  },
+  "Bootstrap Grid System with Nested Columns -SnipGenius": {
+    "prefix": "nestedGrid",
+    "body": [
+      "<div class=\"container\">",
+      "    <div class=\"row\">",
+      "        <div class=\"col-md-6\">",
+      "            <div class=\"row\">",
+      "                <div class=\"col-6\">${1:Nested Column 1}</div>",
+      "                <div class=\"col-6\">${2:Nested Column 2}</div>",
+      "            </div>",
+      "        </div>",
+      "        <div class=\"col-md-6\">${3:Column 2}</div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap grid system with nested columns."
+  },
+  "Bootstrap Responsive Embed -SnipGenius": {
+    "prefix": "embed",
+    "body": [
+      "<div class=\"embed-responsive embed-responsive-${1:16by9}\">",
+      "    <iframe class=\"embed-responsive-item\" src=\"${2:https://www.youtube.com/embed/tgbNymZ7vqY}\" allowfullscreen></iframe>",
+      "</div>"
+    ],
+    "description": "Bootstrap responsive embed for iframes or other media."
+  },
+  "Bootstrap Media Object -SnipGenius": {
+    "prefix": "media",
+    "body": [
+      "<div class=\"media\">",
+      "    <img src=\"${1:https://example.com/64}\" class=\"mr-3\" alt=\"${2:image}\">",
+      "    <div class=\"media-body\">",
+      "        <h5 class=\"mt-0\">${3:Media heading}</h5>",
+      "        ${4:Some quick example text to build on the media heading and make up the bulk of the media body.}",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap media object for media and text alignment."
+  },
+  "Bootstrap Spinner -SnipGenius": {
+    "prefix": "spinner",
+    "body": [
+      "<div class=\"spinner-border text-${1:primary}\" role=\"status\">",
+      "    <span class=\"sr-only\">${2:Loading...}</span>",
+      "</div>"
+    ],
+    "description": "Bootstrap spinner component for loading indicators."
+  },
+  "Bootstrap Login Form -SnipGenius": {
+    "prefix": "formLogin",
+    "body": [
+      "<div class=\"container\">",
+      "    <div class=\"row justify-content-center\">",
+      "        <div class=\"col-md-6\">",
+      "            <div class=\"card\">",
+      "                <div class=\"card-header\">Login</div>",
+      "                <div class=\"card-body\">",
+      "                    <form>",
+      "                        <div class=\"form-group\">",
+      "                            <label for=\"email\">Email address</label>",
+      "                            <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"Enter email\" required>",
+      "                        </div>",
+      "                        <div class=\"form-group\">",
+      "                            <label for=\"password\">Password</label>",
+      "                            <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\" required>",
+      "                        </div>",
+      "                        <button type=\"submit\" class=\"btn btn-primary\">Login</button>",
+      "                        <div class=\"form-check mt-2\">",
+      "                            <input type=\"checkbox\" class=\"form-check-input\" id=\"rememberMe\">",
+      "                            <label class=\"form-check-label\" for=\"rememberMe\">Remember me</label>",
+      "                        </div>",
+      "                    </form>",
+      "                </div>",
+      "                <div class=\"card-footer text-muted\">",
+      "                    <a href=\"#\">Forgot password?</a>",
+      "                </div>",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap login form with email, password, and remember me option."
+  },
+  "Bootstrap Registration Form -SnipGenius": {
+    "prefix": "formRegistration",
+    "body": [
+      "<div class=\"container\">",
+      "    <div class=\"row justify-content-center\">",
+      "        <div class=\"col-md-8\">",
+      "            <div class=\"card\">",
+      "                <div class=\"card-header\">Register</div>",
+      "                <div class=\"card-body\">",
+      "                    <form>",
+      "                        <div class=\"form-group\">",
+      "                            <label for=\"name\">Full Name</label>",
+      "                            <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Enter your full name\" required>",
+      "                        </div>",
+      "                        <div class=\"form-group\">",
+      "                            <label for=\"email\">Email address</label>",
+      "                            <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"Enter email\" required>",
+      "                        </div>",
+      "                        <div class=\"form-group\">",
+      "                            <label for=\"password\">Password</label>",
+      "                            <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Password\" required>",
+      "                        </div>",
+      "                        <div class=\"form-group\">",
+      "                            <label for=\"confirmPassword\">Confirm Password</label>",
+      "                            <input type=\"password\" class=\"form-control\" id=\"confirmPassword\" placeholder=\"Confirm Password\" required>",
+      "                        </div>",
+      "                        <button type=\"submit\" class=\"btn btn-primary\">Register</button>",
+      "                    </form>",
+      "                </div>",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap registration form with full name, email, password, and confirm password."
+  },
+  "Bootstrap File Upload Form -SnipGenius": {
+    "prefix": "formfile",
+    "body": [
+      "<div class=\"container\">",
+      "    <div class=\"row justify-content-center\">",
+      "        <div class=\"col-md-6\">",
+      "            <div class=\"card\">",
+      "                <div class=\"card-header\">File Upload</div>",
+      "                <div class=\"card-body\">",
+      "                    <form>",
+      "                        <div class=\"form-group\">",
+      "                            <label for=\"fileUpload\">Choose file</label>",
+      "                            <input type=\"file\" class=\"form-control-file\" id=\"fileUpload\" required>",
+      "                        </div>",
+      "                        <button type=\"submit\" class=\"btn btn-primary\">Upload</button>",
+      "                    </form>",
+      "                </div>",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Bootstrap file upload form with a file input and submit button."
+  },
+  "Bootstrap Responsive Image -SnipGenius": {
+    "prefix": "imgresponsive",
+    "body": [
+        "<img src=\"${1:#}\" alt=\"${2:Description}\" class=\"img-fluid\">"
+    ],
+    "description": "Bootstrap responsive image that scales with the parent element."
+},
+"Bootstrap Basic Table -SnipGenius": {
+  "prefix": "table-basic",
+  "body": [
+      "<table class=\"table\">",
+      "    <thead>",
+      "        <tr>",
+      "            <th>${1:Header 1}</th>",
+      "            <th>${2:Header 2}</th>",
+      "            <th>${3:Header 3}</th>",
+      "        </tr>",
+      "    </thead>",
+      "    <tbody>",
+      "        <tr>",
+      "            <td>${4:Row 1, Cell 1}</td>",
+      "            <td>${5:Row 1, Cell 2}</td>",
+      "            <td>${6:Row 1, Cell 3}</td>",
+      "        </tr>",
+      "        <tr>",
+      "            <td>${7:Row 2, Cell 1}</td>",
+      "            <td>${8:Row 2, Cell 2}</td>",
+      "            <td>${9:Row 2, Cell 3}</td>",
+      "        </tr>",
+      "    </tbody>",
+      "</table>"
+  ],
+  "description": "Basic Bootstrap table."
+},
+"Bootstrap Striped Table -SnipGenius": {
+  "prefix": "table-striped",
+  "body": [
+      "<table class=\"table table-striped\">",
+      "    <thead>",
+      "        <tr>",
+      "            <th>${1:Header 1}</th>",
+      "            <th>${2:Header 2}</th>",
+      "            <th>${3:Header 3}</th>",
+      "        </tr>",
+      "    </thead>",
+      "    <tbody>",
+      "        <tr>",
+      "            <td>${4:Row 1, Cell 1}</td>",
+      "            <td>${5:Row 1, Cell 2}</td>",
+      "            <td>${6:Row 1, Cell 3}</td>",
+      "        </tr>",
+      "        <tr>",
+      "            <td>${7:Row 2, Cell 1}</td>",
+      "            <td>${8:Row 2, Cell 2}</td>",
+      "            <td>${9:Row 2, Cell 3}</td>",
+      "        </tr>",
+      "    </tbody>",
+      "</table>"
+  ],
+  "description": "Bootstrap table with striped rows."
+},
+"Bootstrap Bordered Table -SnipGenius": {
+  "prefix": "table-bordered",
+  "body": [
+      "<table class=\"table table-bordered\">",
+      "    <thead>",
+      "        <tr>",
+      "            <th>${1:Header 1}</th>",
+      "            <th>${2:Header 2}</th>",
+      "            <th>${3:Header 3}</th>",
+      "        </tr>",
+      "    </thead>",
+      "    <tbody>",
+      "        <tr>",
+      "            <td>${4:Row 1, Cell 1}</td>",
+      "            <td>${5:Row 1, Cell 2}</td>",
+      "            <td>${6:Row 1, Cell 3}</td>",
+      "        </tr>",
+      "        <tr>",
+      "            <td>${7:Row 2, Cell 1}</td>",
+      "            <td>${8:Row 2, Cell 2}</td>",
+      "            <td>${9:Row 2, Cell 3}</td>",
+      "        </tr>",
+      "    </tbody>",
+      "</table>"
+  ],
+  "description": "Bootstrap table with borders."
+},
+"Bootstrap Hoverable Table -SnipGenius": {
+  "prefix": "table-hover",
+  "body": [
+      "<table class=\"table table-hover\">",
+      "    <thead>",
+      "        <tr>",
+      "            <th>${1:Header 1}</th>",
+      "            <th>${2:Header 2}</th>",
+      "            <th>${3:Header 3}</th>",
+      "        </tr>",
+      "    </thead>",
+      "    <tbody>",
+      "        <tr>",
+      "            <td>${4:Row 1, Cell 1}</td>",
+      "            <td>${5:Row 1, Cell 2}</td>",
+      "            <td>${6:Row 1, Cell 3}</td>",
+      "        </tr>",
+      "        <tr>",
+      "            <td>${7:Row 2, Cell 1}</td>",
+      "            <td>${8:Row 2, Cell 2}</td>",
+      "            <td>${9:Row 2, Cell 3}</td>",
+      "        </tr>",
+      "    </tbody>",
+      "</table>"
+  ],
+  "description": "Bootstrap table with hover effect."
+},
+"Bootstrap Responsive Table -SnipGenius": {
+  "prefix": "tableResponsive",
+  "body": [
+      "<div class=\"table-responsive\">",
+      "    <table class=\"table\">",
+      "        <thead>",
+      "            <tr>",
+      "                <th>${1:Header 1}</th>",
+      "                <th>${2:Header 2}</th>",
+      "                <th>${3:Header 3}</th>",
+      "            </tr>",
+      "        </thead>",
+      "        <tbody>",
+      "            <tr>",
+      "                <td>${4:Row 1, Cell 1}</td>",
+      "                <td>${5:Row 1, Cell 2}</td>",
+      "                <td>${6:Row 1, Cell 3}</td>",
+      "            </tr>",
+      "            <tr>",
+      "                <td>${7:Row 2, Cell 1}</td>",
+      "                <td>${8:Row 2, Cell 2}</td>",
+      "                <td>${9:Row 2, Cell 3}</td>",
+      "            </tr>",
+      "        </tbody>",
+      "    </table>",
+      "</div>"
+  ],
+  "description": "Bootstrap table that scrolls horizontally on small screens."
+}
+}
