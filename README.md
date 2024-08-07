@@ -41,103 +41,359 @@ SnipGenius includes the following PHP snippets:
   Prefix: `dbwrite`
   Description: Generates a procedural `INSERT` statement.
 
-![Insert Query Screenshot](images/dbwrite.png)
+  ```php
+  $sql = "INSERT INTO tbaleName (keys) VALUES ('')";
+  $result = mysqli_query($conn, $sql);
+
+  if ($result) {
+    echo 'New record created successfully';
+  } else {
+    echo 'Error: ' . mysqli_error($conn);
+  }
+  ```
 
 - **`Update Query`**
   Prefix: `dbupdate`
   Description: Generates a procedural `UPDATE` statement.
 
-![Update Query Screenshot](images/dbupdate.png)
+  ```php
+  $sql = "UPDATE tableName SET column = 'value' WHERE column = 'condition'";
+  $result = mysqli_query($conn, $sql);
+
+  if ($result) {
+    echo 'Record updated successfully';
+  } else {
+    echo 'Error: ' . mysqli_error($conn);
+  }
+  ```
 
 - **`Delete Query`**
   Prefix: `dbdelete`
   Description: Generates a procedural `DELETE` statement.
 
-![Delete Query Screenshot](images/dbdelete.png)
+  ```php
+  $sql = "DELETE FROM tableName WHERE column = 'condition'";
+  $result = mysqli_query($conn, $sql);
+
+  if ($result) {
+    echo 'Record deleted successfully';
+  } else {
+    echo 'Error: ' . mysqli_error($conn);
+  }
+
+  ```
 
 - **`Form Handling`**
   Prefix: `fiq`
   Description: Handles `form data submission` and insertion into the database.
 
-![Form Handling Screenshot](images/fiq.png)
+  ```php
+  if (isset($_POST['submit'])) { // Here submit is the name of the button that submits the form
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
+    if (mysqli_query($conn, $sql)) {
+      echo 'New record created successfully';
+    } else {
+      echo 'Error: ' . mysqli_error($conn);
+    }
+  }
+  ```
 
 - **`Query Error Check`**
   Prefix: `qch`
   Description: Checks for `errors` after running a MySQL query.
 
-![Query Error Check Screenshot](images/qch.png)
+  ```php
+  $result = mysqli_query($conn, $sql);
+  if (!$result) {
+    echo 'Query Error: ' . mysqli_error($conn);
+  } else {
+
+  }
+  ```
 
 - **`Class Definition`**
   Prefix: `clsdef`
   Description: Generates a basic PHP class definition with `properties, methods, default values`, and usage examples.
 
-![Class Definition Screenshot](images/clsdef.png)
+  ```php
+  class className {
+    private $property1 = 'default1';
+    private $property2 = 'default2';
+
+    public function __construct($property1 = 'default1', $property2 = 'default2') {
+      $this->$property1 = $property1;
+      $this->$property2 = $property2;
+    }
+
+    public function getProperty1() {
+      return $this->$property1;
+    }
+
+    public function setProperty1($property1) {
+      $this->$property1 = $property1;
+    }
+
+    public function getProperty2() {
+      return $this->$property2;
+    }
+
+    public function setProperty2($property2) {
+      $this->$property2 = $property2;
+    }
+  }
+
+  // Usage Example
+  // Create an instance of the class with default values
+  $obj = new className();
+
+  // Create an instance with custom values
+  $obj = new className('value1', 'value2');
+
+  // Access and modify properties
+  $obj->setProperty1('new value1');
+  $property1 = $obj->getProperty1();
+  $obj->setProperty2('new value2');
+  $property2 = $obj->getProperty2();
+
+  ```
 
 - **`Database Connection With custom class`**
   Prefix: `cdbconn`
   Description: Generates a PHP class for `database connection` using OOP with default values and usage examples.
 
-![Database Connection With custom class Screenshot](images/cdbconn.png)
+  ```php
+  class Database {
+    private $servername = 'localhost';
+    private $username = 'root';
+    private $password = '';
+    private $dbname = 'test';
+    private $conn;
+
+    public function __construct($servername = 'localhost', $username = 'root', $password = '', $dbname = 'test') {
+      $this->$servername = $servername;
+      $this->$username = $username;
+      $this->$password = $password;
+      $this->$dbname = $dbname;
+      $this->connect();
+    }
+
+    private function connect() {
+      $this->$conn = new mysqli($this->$servername, $this->$username, $this->$password, $this->$dbname);
+      if ($this->$conn->connect_error) {
+        die("Connection failed: " . $this->$conn->connect_error);
+      }
+    }
+
+    public function getConnection() {
+      return $this->$conn;
+    }
+  }
+
+  // Usage Example
+  // Create an instance of the Database class
+  $db = new Database();
+
+  // Create an instance with custom values
+  $db = new Database('localhost', 'user', 'password', 'database');
+
+  // Access the connection object
+  $conn = $db->getConnection();
+
+
+  ```
 
 - **`Class Based Insert Query Method`**
   Prefix: `fdbwrite`
   Description: Generates an insert query method for the Database class. Use with `insert($table, $columns, $values)`.
 
-![Class Based Insert Query Method Screenshot](images/fdbwrite.png)
+  ```php
+  public function insert($table, $columns, $values) {
+    $sql = "INSERT INTO $table ($columns) VALUES ($values);";
+    result = mysqli_query($this->$conn, $sql);
+    if (!$result) {
+      die("Query Error: " . mysqli_error($this->$conn));
+    }
+    return $result;
+  }
+
+  // Usage Example
+  // Create an instance of the Database class
+  $db = new Database();
+
+  // Insert data into 'users' table
+  $db->insert('users', 'name, email', '"Jon snow", "jon@example.com"');
+  ```
 
 - **`Class Based Update Query Method`**
   Prefix: `fdbupdate`
   Description: Generates an update query method for the Database class. Use with `update($table, $set, $conditions)`.
 
-![Class Based Update Query Method Screenshot](images/fdbupdate.png)
+  ```php
+  public function update($table, $set, $conditions) {
+    $sql = "UPDATE $table SET $set WHERE $conditions;";
+    $result = mysqli_query($this->$conn, $sql);
+    if (!$result) {
+      die("Query Error: " . mysqli_error($this->$conn));
+    }
+    return $result;
+  }
+
+  // Usage Example
+  // Create an instance of the Database class
+  $db = new Database();
+
+  // Update data in 'users' table
+  $db->update('users', 'email = "newemail@example.com"', 'name = "John snow"');
+  ```
 
 - **`Class Based Select Query Method`**
   Prefix: `fdbread`
   Description: Generates a select query method for the Database class. Use with `select($table, $columns, $conditions)`.
 
-![Class Based Select Query Method Screenshot](images/fdbread.png)
+  ```php
+  public function select($table, $columns, $conditions = '') {
+    $sql = "SELECT $columns FROM $table WHERE $conditions;";
+    $result = mysqli_query($this->$conn, $sql);
+    if (!$result) {
+      die("Query Error: " . mysqli_error($this->$conn));
+    }
+    return $result;
+  }
+
+  // Usage Example
+  // Create an instance of the Database class
+  $db = new Database();
+
+  // Select data from 'users' table
+  $result = $db->select('users', '*', 'name = "John snow"');
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo $row['name'] . " - " . $row['email'];
+  }
+  ```
 
 - **`Class Based Delete Query Method`**
   Prefix: `fdbdelete`
   Description: Generates a delete query method for the Database class. Use with `delete($table, $conditions)`.
 
-![Class Based Delete Query Method Screenshot](images/fdbdelete.png)
+  ```php
+  public function delete($table, $conditions) {
+    $sql = "DELETE FROM $table WHERE $conditions;";
+    $result = mysqli_query(this->$conn, $sql);
+    if (!$result) {
+      die("Query Error: " . mysqli_error($this->$conn));
+    }
+    return $result;
+  }
+
+  // Usage Example
+  // Create an instance of the Database class
+  $db = new Database();
+
+  // Delete data from 'users' table
+  $db->delete('users', 'name = "John snow"');
+  ```
 
 - **`OOP Database Connection`**
   Prefix: `odbconn`
   Description: Generates a `database connection`.
 
-![OOP Database Connection Screenshot](images/odbconn.png)
+  ```php
+  $servername = "";
+  $username = "";
+  $password = "";
+  $dbname = "";
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  ```
 
 - **`OOP SELECT Query`**
   Prefix: `odbread`
   Description: Generates an `OOP SELECT query`.
 
-![OOP SELECT Query Screenshot](images/odbread.png)
+  ```php
+  $sql = 'SELECT * FROM tableName';
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      // Process row
+    }
+  } else {
+    echo '0 results';
+  }
+
+  ```
 
 - **`OOP Insert Data`**
   Prefix: `odbwrite`
   Description: Generates an `INSERT` statement.
 
-![OOP Insert Data Screenshot](images/odbwrite.png)
+  ```php
+  $sql = "INSERT INTO  (columns) VALUES ('');";
+  $result = $conn->query($sql);
+
+  if ($result === TRUE) {
+    echo 'New record created successfully';
+  } else {
+    echo 'Error: ' . $sql . '<br>' . $conn->error;
+  }
+  ```
 
 - **`OOP Update Data`**
   Prefix: `odbupdate`
   Description: Generates an `OOP UPDATE` statement.
 
-![OOP Update Data Screenshot](images/odbupdate.png)
+```php
+$sql = "UPDATE tableName SET  column= 'value' WHERE  column= 'condition';";
+$result = $conn->query($sql);
+
+if ($result === TRUE) {
+  echo 'Record updated successfully';
+} else {
+  echo 'Error: ' . $sql . '<br>' . $conn->error;
+}
+```
 
 - **`OOP Delete Data`**
   Prefix: `odbdelete`
   Description: Generates an `OOP DELETE` statement.
 
-![OOP Delete Data Screenshot](images/odbdelete.png)
+  ```php
+  $sql = "DELETE FROM tableName WHERE  column= 'condition';";
+  $result = $conn->query($sql);
+
+  if ($result === TRUE) {
+    echo 'Record deleted successfully';
+  } else {
+    echo 'Error: ' . $sql . '<br>' . $conn->error;
+  }
+  ```
 
 - **`OOP Prepared Statement`**
   Prefix: `prepstmt`
   Description: Generates an `OOP prepared` statement.
 
-![OOP Prepared Statement Screenshot](images/prepstmt.png)
+  ```php
+  $stmt = $conn->prepare("");
+  $stmt->bind_param("", );
+  $stmt->execute();
+
+  $result = $stmt->get_result();
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+
+    }
+  } else {
+    echo '0 results';
+  }
+  $stmt->close();
+
+  ```
 
 - **`PDO Connection`**
   Prefix: `pdoconnect`
