@@ -327,6 +327,91 @@
     "description": "Generates a PDO database connection snippet"
   },
 
+  "PDO Insert Data": {
+    "prefix": "pdoinsert",
+    "body": [
+      "$$stmt = $pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
+      "$$stmt->bindParam(':value1', $2);",
+      "$$stmt->bindParam(':value2', $3);",
+      "$$stmt->execute();"
+    ],
+    "description": "Inserts data into a table. "
+  },
+  "PDO Read Data": {
+    "prefix": "pdoread",
+    "body": [
+      "$$stmt = $pdo->prepare(\"SELECT * FROM $1 WHERE column1 = :value\");",
+      "$$stmt->bindParam(':value', $2);",
+      "$$stmt->execute();",
+      "$$results = $$stmt->fetchAll(PDO::FETCH_ASSOC);",
+      "print_r($$results);"
+    ],
+    "description": "Read data from a table."
+  },
+
+  
+  "PDO Update Data": {
+    "prefix": "pdoupdate",
+    "body": [
+      "$$stmt = $pdo->prepare(\"UPDATE $1 SET column1 = :new_value WHERE column2 = :identifier\");",
+      "$$stmt->bindParam(':new_value', $2);",
+      "$$stmt->bindParam(':identifier', $3);",
+      "$$stmt->execute();"
+    ],
+    "description": "Updates data in a table."
+  },
+  "PDO Delete Data": {
+    "prefix": "pdodelete",
+    "body": [
+      "$$stmt = $pdo->prepare(\"DELETE FROM $1 WHERE column1 = :value\");",
+      "$$stmt->bindParam(':value', $2);",
+      "$$stmt->execute();"
+    ],
+    "description": "Deletes data from a table."
+  },
+  "PDO Insert Multiple Rows": {
+    "prefix": "pdominsert",
+    "body": [
+      "$$pdo->beginTransaction();",
+      "try {",
+      "  $$stmt = $pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
+      "  foreach ($$data as $row) {",
+      "    $$stmt->bindParam(':value1', $row['value1']);",
+      "    $$stmt->bindParam(':value2', $row['value2']);",
+      "    $$stmt->execute();",
+      "  }",
+      "  $$pdo->commit();",
+      "} catch (Exception $$e) {",
+      "  $$pdo->rollBack();",
+      "  echo 'Failed: ' . $$e->getMessage();",
+      "}"
+    ],
+    "description": "Inserts multiple rows into a table."
+  },
+  "PDO Check Table Exists": {
+    "prefix": "ptex",
+    "body": [
+      "$$stmt = $pdo->prepare(\"SHOW TABLES LIKE '$1'\");",
+      "$$stmt->execute();",
+      "$$exists = $$stmt->rowCount() > 0;",
+      "if ($$exists) {",
+      "  echo 'Table exists';",
+      "} else {",
+      "  echo 'Table does not exist';",
+      "}"
+    ],
+    "description": "Checks if a table exists in the database."
+  },
+  "PDO Execute Raw SQL": {
+    "prefix": "pexecsql",
+    "body": [
+      "$$stmt = $pdo->query(\"$1\");",
+      "$$results = $$stmt->fetchAll(PDO::FETCH_ASSOC);",
+      "print_r($$results);"
+    ],
+    "description": "Executes raw SQL query and fetches results."
+  },
+
   "OOP SELECT Query  -SnipGenius": {
     "prefix": "odbread",
     "body": [
@@ -422,7 +507,7 @@
     ],
     "description": "Creates a basic if-else statement."
   },
-  "If-Else if-else  -SnipGenius": {
+  "If-elseif-else  -SnipGenius": {
     "prefix": "ifelseif",
     "body": [
       "if ($1) {",
@@ -433,7 +518,7 @@
       "  $5",
       "}"
     ],
-    "description": "Creates a basic if-else if-else statement. Replace $1 with the condition for the first if block, $2 with the code for the first block, $3 with the condition for the else if block, $4 with the code for the else if block, and $5 with the code for the else block."
+    "description": "Creates a basic if-else if-else statement."
   },
   "Foreach Loop  -SnipGenius": {
     "prefix": "foreach",
@@ -696,7 +781,7 @@
     "description": "Converts an array to JSON format. Replace $$array with the array variable."
   },
   "JSON to Array  -SnipGenius": {
-    "prefix": "jsontoparray",
+    "prefix": "jsontoarray",
     "body": [
       "$$array = json_decode('$1', true);",
       "print_r($$array);"
@@ -744,7 +829,7 @@
     "description": "Checks if a variable is empty. Replace $$variable with the variable name."
   },
   "Validate URL  -SnipGenius": {
-    "prefix": "validateurl",
+    "prefix": "vurl",
     "body": [
       "$$url = '$1';",
       "if (filter_var($$url, FILTER_VALIDATE_URL)) {",
@@ -851,7 +936,7 @@
     "description": "Extracts a substring from a string. Replace $1 with the string, $2 with the start position, and $3 with the length."
   },
   "Random Integer  -SnipGenius": {
-    "prefix": "randint",
+    "prefix": "rint",
     "body": [
       "$$min = $1;",
       "$$max = $2;",
@@ -877,7 +962,7 @@
     "description": "Gets the last modification time of a file. Replace $1 with the file path."
   },
   "Validate Integer  -SnipGenius": {
-    "prefix": "validateint",
+    "prefix": "vint",
     "body": [
       "$$number = '$1';",
       "if (filter_var($$number, FILTER_VALIDATE_INT) !== false) {",
@@ -889,7 +974,7 @@
     "description": "Validates if a value is an integer. Replace $1 with the value."
   },
   "For loop  -SnipGenius": {
-    "prefix":"forloop",
+    "prefix":"for",
     "body": [
       "for($$i = 0, $$i < condition, $$i ++)",
       "{",
