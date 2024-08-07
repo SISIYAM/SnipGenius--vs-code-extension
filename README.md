@@ -9,27 +9,31 @@ SnipGenius includes the following PHP snippets:
 - **`Database Connection`**  
   Prefix: `dbconn`  
   Description: Generates a procedural `database connection`.
+  ![Database Connection Screenshot](images/dbconn.png)
 
 - **`SELECT Query`**  
   Prefix: `dbread`  
   Description: Generates a procedural `SELECT query`.
+  ![SELECT Query Screenshot](images/dbread.png)
 
 - **`Insert Query`**  
   Prefix: `dbwrite`  
   Description: Generates a procedural `INSERT` statement.
+  ![Insert Query Screenshot](images/dbwrite.png)
 
 - **`Update Query`**  
   Prefix: `dbupdate`  
   Description: Generates a procedural `UPDATE` statement.
+  ![Update Query Screenshot](images/dbupdate.png)
 
 - **`Delete Query`**  
   Prefix: `dbdelete`  
   Description: Generates a procedural `DELETE` statement.
-
+  ![Delete Query Screenshot](images/dbdelete.png)
 - **`Form Handling`**  
   Prefix: `fiq`  
   Description: Handles `form data submission` and insertion into the database.
-
+  ![Form Handling Screenshot](images/fiq.png)
 - **`Query Error Check`**  
   Prefix: `qch`  
   Description: Checks for `errors` after running a MySQL query.

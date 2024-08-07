@@ -19,7 +19,7 @@
   "SELECT Query -SnipGenius": {
     "prefix": "dbread",
     "body": [
-      "$$sql = \"SELECT $1 FROM $2 WHERE $3 = '$4';\";",
+      "$$sql = \"SELECT * FROM tableName WHERE column = 'condition'\";",
       "$$result = mysqli_query($$conn, $$sql);",
       "",
       "if (mysqli_num_rows($$result) > 0) {",
@@ -36,7 +36,7 @@
   "Insert Query  -SnipGenius": {
     "prefix": "dbwrite",
     "body": [
-      "$$sql = \"INSERT INTO $1 ($2) VALUES ('$3');\";",
+      "$$sql = \"INSERT INTO tbaleName (keys) VALUES ('$1')\";",
       "$$result = mysqli_query($$conn, $$sql);",
       "",
       "if ($$result) {",
@@ -52,7 +52,7 @@
   "Update Query  -SnipGenius": {
     "prefix": "dbupdate",
     "body": [
-      "$$sql = \"UPDATE $1 SET $2 = '$3' WHERE $4 = '$5';\";",
+      "$$sql = \"UPDATE tableName SET column = 'value' WHERE column = 'condition'\";",
       "$$result = mysqli_query($$conn, $$sql);",
       "",
       "if ($$result) {",
@@ -67,7 +67,7 @@
   "Delete Query  -SnipGenius": {
     "prefix": "dbdelete",
     "body": [
-      "$$sql = \"DELETE FROM $1 WHERE $2 = '$3';\";",
+      "$$sql = \"DELETE FROM tableName WHERE column = 'condition'\";",
       "$$result = mysqli_query($$conn, $$sql);",
       "",
       "if ($$result) {",
@@ -86,7 +86,7 @@
       "if (isset($$_POST['submit'])) { // Here submit is the name of the button that submits the form",
       "  $$name = mysqli_real_escape_string($$conn, $$_POST['name']);",
       "  $$email = mysqli_real_escape_string($$conn, $$_POST['email']);",
-      "  $$sql = \"INSERT INTO users (name, email) VALUES ('$$name', '$$email');\";",
+      "  $$sql = \"INSERT INTO users (name, email) VALUES ('$$name', '$$email')\";",
       "  if (mysqli_query($$conn, $$sql)) {",
       "    echo 'New record created successfully';",
       "  } else {",
