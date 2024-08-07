@@ -118,7 +118,7 @@
       "  private $$property2 = 'default2';",
       "",
       "  public function __construct($$property1 = 'default1', $$property2 = 'default2') {",
-      "    $$$this->$$property1 = $$property1;",
+      "    $$this->$$property1 = $$property1;",
       "    $$this->$$property2 = $$property2;",
       "  }",
       "",
@@ -330,7 +330,7 @@
   "PDO Insert Data": {
     "prefix": "pdoinsert",
     "body": [
-      "$$stmt = $pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
+      "$$stmt = $$pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
       "$$stmt->bindParam(':value1', $2);",
       "$$stmt->bindParam(':value2', $3);",
       "$$stmt->execute();"
@@ -340,7 +340,7 @@
   "PDO Read Data": {
     "prefix": "pdoread",
     "body": [
-      "$$stmt = $pdo->prepare(\"SELECT * FROM $1 WHERE column1 = :value\");",
+      "$$stmt = $$pdo->prepare(\"SELECT * FROM $1 WHERE column1 = :value\");",
       "$$stmt->bindParam(':value', $2);",
       "$$stmt->execute();",
       "$$results = $$stmt->fetchAll(PDO::FETCH_ASSOC);",
@@ -353,7 +353,7 @@
   "PDO Update Data": {
     "prefix": "pdoupdate",
     "body": [
-      "$$stmt = $pdo->prepare(\"UPDATE $1 SET column1 = :new_value WHERE column2 = :identifier\");",
+      "$$stmt = $$pdo->prepare(\"UPDATE $1 SET column1 = :new_value WHERE column2 = :identifier\");",
       "$$stmt->bindParam(':new_value', $2);",
       "$$stmt->bindParam(':identifier', $3);",
       "$$stmt->execute();"
@@ -363,7 +363,7 @@
   "PDO Delete Data": {
     "prefix": "pdodelete",
     "body": [
-      "$$stmt = $pdo->prepare(\"DELETE FROM $1 WHERE column1 = :value\");",
+      "$$stmt = $$pdo->prepare(\"DELETE FROM $1 WHERE column1 = :value\");",
       "$$stmt->bindParam(':value', $2);",
       "$$stmt->execute();"
     ],
@@ -374,7 +374,7 @@
     "body": [
       "$$pdo->beginTransaction();",
       "try {",
-      "  $$stmt = $pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
+      "  $$stmt = $$pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
       "  foreach ($$data as $row) {",
       "    $$stmt->bindParam(':value1', $row['value1']);",
       "    $$stmt->bindParam(':value2', $row['value2']);",
@@ -391,7 +391,7 @@
   "PDO Check Table Exists": {
     "prefix": "ptex",
     "body": [
-      "$$stmt = $pdo->prepare(\"SHOW TABLES LIKE '$1'\");",
+      "$$stmt = $$pdo->prepare(\"SHOW TABLES LIKE '$1'\");",
       "$$stmt->execute();",
       "$$exists = $$stmt->rowCount() > 0;",
       "if ($$exists) {",
@@ -405,7 +405,7 @@
   "PDO Execute Raw SQL": {
     "prefix": "pexecsql",
     "body": [
-      "$$stmt = $pdo->query(\"$1\");",
+      "$$stmt = $$pdo->query(\"$1\");",
       "$$results = $$stmt->fetchAll(PDO::FETCH_ASSOC);",
       "print_r($$results);"
     ],
