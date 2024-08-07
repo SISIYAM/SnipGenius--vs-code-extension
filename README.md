@@ -399,295 +399,236 @@ if ($result === TRUE) {
   Prefix: `pdoconnect`
   Description: Generates a PDO `database connection`.
 
-![PDO Connection Screenshot](images/pdoconnect.png)
+  ```php
+  $dsn = 'mysql:host=;dbname=';
+  $username = "";
+  $password = "";
+
+  try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo 'Connected successfully';
+  } catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+  }
+  ```
 
 - **`PDO Insert Data`**
   Prefix: `pdoinsert`
   Description: PDO Inserts data into a table.
 
-![PDO Insert Data Screenshot](images/pdoinsert.png)
+  ```php
+  $stmt = $pdo->prepare("INSERT INTO tableName  (column1, column2) VALUES (:value1, :value2)");
+  $stmt->bindParam(':value1', );
+  $stmt->bindParam(':value2', );
+  $stmt->execute();
+  ```
 
 - **`PDO Read Data`**
   Prefix: `pdoread`
   Description: Read data from a table.
 
-![PDO Read Data Screenshot](images/pdoread.png)
+  ```php
+  $stmt = $pdo->prepare("SELECT * FROM tableName WHERE column1 = :value");
+  $stmt->bindParam(':value', );
+  $stmt->execute();
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  print_r($results);
+  ```
 
 - **`PDO Update Data`**
   Prefix: `pdoupdate`
   Description: Updates data in a table.
 
-![PDO Update Data Screenshot](images/pdoupdate.png)
+  ```php
+  $stmt = $pdo->prepare("UPDATE tableName SET column1 = :new_value WHERE column2 = :identifier");
+  $stmt->bindParam(':new_value', );
+  $stmt->bindParam(':identifier', );
+  $stmt->execute();
+  ```
 
 - **`PDO Delete Data`**
   Prefix: `pdodelete`
   Description: Deletes data from a table.
 
-![PDO Delete Data Screenshot](images/pdodelete.png)
+  ```php
+  $stmt = $pdo->prepare("DELETE FROM tableName WHERE column1 = :value");
+  $stmt->bindParam(':value', );
+  $stmt->execute();
+  ```
 
 - **`PDO Insert Multiple Rows`**
   Prefix: `pdominsert`
   Description: Inserts multiple rows into a table.
 
-![PDO Insert Multiple Rows Screenshot](images/pdominsert.png)
+```php
+$pdo->beginTransaction();
+try {
+  $stmt = $pdo->prepare("INSERT INTO tableName (column1, column2) VALUES (:value1, :value2)");
+  foreach ($data as row) {
+    $stmt->bindParam(':value1', row['value1']);
+    $stmt->bindParam(':value2', row['value2']);
+    $stmt->execute();
+  }
+  $pdo->commit();
+} catch (Exception $e) {
+  $pdo->rollBack();
+  echo 'Failed: ' . $e->getMessage();
+}
+```
 
 - **`PDO Check Table Exists`**
   Prefix: `ptex`
   Description: Checks if a table exists in the database.
 
-![PDO Check Table Exists Screenshot](images/ptex.png)
+  ```php
+  $tableName = 'user'; // Replace with your actual table name
+
+  $stmt = $pdo->prepare("SHOW TABLES LIKE :tableName");
+  $stmt->bindParam(':tableName', $tableName, PDO::PARAM_STR);
+  $stmt->execute();
+
+  $exists = $stmt->rowCount() > 0;
+
+  if ($exists) {
+      echo 'Table exists';
+  } else {
+      echo 'Table does not exist';
+  }
+  ```
 
 - **`PDO Execute Raw SQL`**
   Prefix: `pexecsql`
   Description: Executes raw SQL query and fetches results.
 
-![PDO Execute Raw SQL Screenshot](images/pexecsql.png)
+  ```php
+  $stmt = $pdo->query("");
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  print_r($results);
+  ```
 
 - **`If-Else`**
   Prefix: `ifelse`
   Description: Creates a basic `if-else` statement.
 
-![If-Else Screenshot](images/ifelse.png)
+  ```php
+  if () {
+
+  } else {
+    // Alternative code
+  }
+  ```
 
 - **`If-elseif-else`**
   Prefix: `ifelseif`
   Description: Creates a basic `If-elseif-else` statement.
 
-![If-elseif-else Screenshot](images/ifelseif.png)
+  ```php
+  if () {
+
+  } else if () {
+
+  } else {
+
+  }
+  ```
 
 - **`Foreach Loop`**
   Prefix: `foreach`
   Description: Creates a `foreach` loop.
 
-![Foreach Loop Screenshot](images/foreach.png)
+  ```php
+  foreach ($array as $key => $value) {
+
+  }
+  ```
 
 - **`Try-Catch Block`**
   Prefix: `trycatch`
   Description: Creates a `try-catch` block.
 
-![Try-Catch Block Screenshot](images/trycatch.png)
+  ```php
+  try {
+
+  } catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
+  }
+  ```
 
 - **`Include File`**
   Prefix: `inc`
   Description: Includes a PHP file.
 
-![Include File Screenshot](images/inc.png)
+  ```php
+  include ''; // Your file path
+  ```
 
 - **`Require File`**
   Prefix: `rqr`
   Description: Requires a PHP file.
 
-![Require File Screenshot](images/rqr.png)
+  ```php
+  require ''; // Your file path
+  ```
 
 - **`include_once`**
   Prefix: `inco`
   Description: Generates an `include_once` statement.
 
-![include_once Screenshot](images/inco.png)
+  ```php
+  include_once 'file_path';
+  ```
 
 - **`require_once`**
-  Prefix: `reqo`
+  Prefix: `rqro`
   Description: Generates a `require_once` statement.
 
-![require_once Screenshot](images/reqo.png)
-
-- **`Database Connection`**
-  Prefix: `dbconn`
-  Description: Generates a procedural database connection snippet.
-
-![Database Connection Screenshot](images/dbconn.png)
-
-- **`SELECT Query`**
-  Prefix: `dbread`
-  Description: Generates a `SELECT` query snippet.
-
-![SELECT Query Screenshot](images/dbread.png)
-
-- **`INSERT Query`**
-  Prefix: `dbwrite`
-  Description: Generates an `INSERT` statement snippet.
-
-![INSERT Query Screenshot](images/dbwrite.png)
-
-- **`UPDATE Query`**
-  Prefix: `dbupdate`
-  Description: Generates an `UPDATE` statement snippet.
-
-![UPDATE Query Screenshot](images/dbupdate.png)
-
-- **`DELETE Query`**
-  Prefix: `dbdelete`
-  Description: Generates a `DELETE` statement snippet.
-
-![DELETE Query Screenshot](images/dbdelete.png)
-
-- **`Form Handling`**
-  Prefix: `fiq`
-  Description: Handles form data submission and insertion into the database.
-
-![Form Handling Screenshot](images/fiq.png)
-
-- **`Query Error Check`**
-  Prefix: `qch`
-  Description: Checks for errors after running a MySQL query.
-
-![Query Error Check Screenshot](images/qch.png)
-
-- **`Class Definition`**
-  Prefix: `clsdef`
-  Description: Generates a basic PHP class definition with properties, methods, default values, and usage examples.
-
-![Class Definition Screenshot](images/clsdef.png)
-
-- **`Class Database Connection`**
-  Prefix: `cdbconn`
-  Description: Generates a PHP class for database connection using OOP with default values and usage examples.
-
-![Class Database Connection Screenshot](images/cdbconn.png)
-
-- **`Insert Query Method`**
-  Prefix: `fdbwrite`
-  Description: Generates an insert query method for the Database class.
-
-![Insert Query Method Screenshot](images/fdbwrite.png)
-
-- **`Update Query Method`**
-  Prefix: `fdbupdate`
-  Description: Generates an update query method for the Database class.
-
-![Update Query Method Screenshot](images/fdbupdate.png)
-
-- **`Select Query Method`**
-  Prefix: `fdbread`
-  Description: Generates a select query method for the Database class.
-
-![Select Query Method Screenshot](images/fdbread.png)
-
-- **`Delete Query Method`**
-  Prefix: `fdbdelete`
-  Description: Generates a delete query method for the Database class.
-
-![Delete Query Method Screenshot](images/fdbdelete.png)
-
-- **`OOP Database Connection`**
-  Prefix: `odbconn`
-  Description: Generates a database connection snippet.
-
-![OOP Database Connection Screenshot](images/odbconn.png)
-
-- **`PDO Connection`**
-  Prefix: `pdoconnect`
-  Description: Generates a PDO database connection snippet.
-
-![PDO Connection Screenshot](images/pdoconnect.png)
-
-- **`OOP SELECT Query`**
-  Prefix: `odbread`
-  Description: Generates an OOP SELECT query snippet.
-
-![OOP SELECT Query Screenshot](images/odbread.png)
-
-- **`OOP Insert Data`**
-  Prefix: `odbwrite`
-  Description: Generates an INSERT statement snippet.
-
-![OOP Insert Data Screenshot](images/odbwrite.png)
-
-- **`OOP Update Data`**
-  Prefix: `odbupdate`
-  Description: Generates an OOP UPDATE statement snippet.
-
-![OOP Update Data Screenshot](images/odbupdate.png)
-
-- **`OOP Delete Data`**
-  Prefix: `odbdelete`
-  Description: Generates an OOP DELETE statement snippet.
-
-![OOP Delete Data Screenshot](images/odbdelete.png)
-
-- **`OOP Prepared Statement`**
-  Prefix: `prepstmt`
-  Description: Generates an OOP prepared statement snippet.
-
-![OOP Prepared Statement Screenshot](images/prepstmt.png)
-
-- **`If-Else`**
-  Prefix: `ifelse`
-  Description: Creates a basic if-else statement.
-
-![If-Else Screenshot](images/ifelse.png)
-
-- **`If-Else if-else`**
-  Prefix: `ifelseif`
-  Description: Creates a basic if-else if-else statement.
-
-![If-Else if-else Screenshot](images/ifelseif.png)
-
-- **`Foreach Loop`**
-  Prefix: `foreach`
-  Description: Creates a foreach loop.
-
-![Foreach Loop Screenshot](images/foreach.png)
-
-- **`Try-Catch Block`**
-  Prefix: `trycatch`
-  Description: Creates a try-catch block.
-
-![Try-Catch Block Screenshot](images/trycatch.png)
-
-- **`Include File`**
-  Prefix: `inc`
-  Description: Includes a PHP file.
-
-![Include File Screenshot](images/inc.png)
-
-- **`Require File`**
-  Prefix: `rqr`
-  Description: Requires a PHP file.
-
-![Require File Screenshot](images/rqr.png)
-
-- **`Include Once`**
-  Prefix: `inco`
-  Description: Generates an 'include_once' statement.
-
-![Include Once Screenshot](images/inco.png)
-
-- **`Require Once`**
-  Prefix: `rqro`
-  Description: Generates a 'require_once' statement.
-
-![Require Once Screenshot](images/rqro.png)
+  ```php
+  require_once 'file_path';
+  ```
 
 - **`Session Start`**
   Prefix: `sessionstart`
   Description: Starts a PHP session.
 
-![Session Start Screenshot](images/sessionstart.png)
+  ```php
+  session_start();
+
+  $user = $_SESSION['user'];
+  ```
 
 - **`HTTP Header`**
   Prefix: `hdr`
   Description: Sends a raw HTTP header.
 
-![HTTP Header Screenshot](images/hdr.png)
+  ```php
+  header('');
+  ```
 
 - **`Set Cookie`**
   Prefix: `setcookie`
   Description: Sets a cookie.
 
-![Set Cookie Screenshot](images/setcookie.png)
+  ```php
+  setcookie($key, $value, time() + (86400 * 30), '/');
+
+  ```
 
 - **`Get Request`**
   Prefix: `get`
   Description: Retrieves data from a GET request.
 
-![Get Request Screenshot](images/get.png)
+  ```php
+  $value = $_GET[''];
+  ```
 
 - **`Post Request`**
   Prefix: `post`
   Description: Retrieves data from a POST request.
 
-![Post Request Screenshot](images/post.png)
+  ```php
+  $value = $_POST[''];
+  ```
 
 - **`Date and Time`**
   Prefix: `date`

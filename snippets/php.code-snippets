@@ -330,9 +330,9 @@
   "PDO Insert Data": {
     "prefix": "pdoinsert",
     "body": [
-      "$$stmt = $$pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
-      "$$stmt->bindParam(':value1', $2);",
-      "$$stmt->bindParam(':value2', $3);",
+      "$$stmt = $$pdo->prepare(\"INSERT INTO tableName (column1, column2) VALUES (:value1, :value2)\");",
+      "$$stmt->bindParam(':value1', $1);",
+      "$$stmt->bindParam(':value2', $2);",
       "$$stmt->execute();"
     ],
     "description": "Inserts data into a table. "
@@ -340,8 +340,8 @@
   "PDO Read Data": {
     "prefix": "pdoread",
     "body": [
-      "$$stmt = $$pdo->prepare(\"SELECT * FROM $1 WHERE column1 = :value\");",
-      "$$stmt->bindParam(':value', $2);",
+      "$$stmt = $$pdo->prepare(\"SELECT * FROM tableName WHERE column1 = :value\");",
+      "$$stmt->bindParam(':value', $1);",
       "$$stmt->execute();",
       "$$results = $$stmt->fetchAll(PDO::FETCH_ASSOC);",
       "print_r($$results);"
@@ -353,9 +353,9 @@
   "PDO Update Data": {
     "prefix": "pdoupdate",
     "body": [
-      "$$stmt = $$pdo->prepare(\"UPDATE $1 SET column1 = :new_value WHERE column2 = :identifier\");",
-      "$$stmt->bindParam(':new_value', $2);",
-      "$$stmt->bindParam(':identifier', $3);",
+      "$$stmt = $$pdo->prepare(\"UPDATE tableName SET column1 = :new_value WHERE column2 = :identifier\");",
+      "$$stmt->bindParam(':new_value', $1);",
+      "$$stmt->bindParam(':identifier', $2);",
       "$$stmt->execute();"
     ],
     "description": "Updates data in a table."
@@ -363,8 +363,8 @@
   "PDO Delete Data": {
     "prefix": "pdodelete",
     "body": [
-      "$$stmt = $$pdo->prepare(\"DELETE FROM $1 WHERE column1 = :value\");",
-      "$$stmt->bindParam(':value', $2);",
+      "$$stmt = $$pdo->prepare(\"DELETE FROM tableName WHERE column1 = :value\");",
+      "$$stmt->bindParam(':value', $1);",
       "$$stmt->execute();"
     ],
     "description": "Deletes data from a table."
@@ -374,7 +374,7 @@
     "body": [
       "$$pdo->beginTransaction();",
       "try {",
-      "  $$stmt = $$pdo->prepare(\"INSERT INTO $1 (column1, column2) VALUES (:value1, :value2)\");",
+      "  $$stmt = $$pdo->prepare(\"INSERT INTO tableName (column1, column2) VALUES (:value1, :value2)\");",
       "  foreach ($$data as $row) {",
       "    $$stmt->bindParam(':value1', $row['value1']);",
       "    $$stmt->bindParam(':value2', $row['value2']);",
@@ -391,13 +391,18 @@
   "PDO Check Table Exists": {
     "prefix": "ptex",
     "body": [
-      "$$stmt = $$pdo->prepare(\"SHOW TABLES LIKE '$1'\");",
+      "$$tableName = 'user'; // Replace with your actual table name",
+      "",
+      "$$stmt = $$pdo->prepare(\"SHOW TABLES LIKE :tableName\");",
+      "$$stmt->bindParam(':tableName', $$tableName, PDO::PARAM_STR);",
       "$$stmt->execute();",
+      "",
       "$$exists = $$stmt->rowCount() > 0;",
+      "",
       "if ($$exists) {",
-      "  echo 'Table exists';",
+      "    echo 'Table exists';",
       "} else {",
-      "  echo 'Table does not exist';",
+      "    echo 'Table does not exist';",
       "}"
     ],
     "description": "Checks if a table exists in the database."
