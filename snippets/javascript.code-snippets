@@ -169,7 +169,7 @@
     "description": "Fetches data from an API and handles errors."
   },
   "Check Array Duplicates  -SnipGenius": {
-    "prefix": "hasDuplicates",
+    "prefix": "hasDup",
     "body": [
       "function hasDuplicates(array) {",
       "    return new Set(array).size !== array.length;",
@@ -178,7 +178,7 @@
     "description": "Checks if an array contains duplicate values."
   },
   "Form Data to Object  -SnipGenius": {
-    "prefix": "formDataToObject",
+    "prefix": "formToObj",
     "body": [
       "function formDataToObject(formData) {",
       "    const obj = {};",
