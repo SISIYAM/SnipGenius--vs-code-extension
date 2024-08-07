@@ -1159,7 +1159,7 @@
     "$$pdo = new PDO('mysql:host=$1;dbname=$2', '$3', '$4');",
     "$$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);",
     "",
-    "$$sql = 'INSERT INTO $5 (column1, column2, column3) VALUES (?, ?, ?)';",
+    "$$sql = 'INSERT INTO tableName (column1, column2, column3) VALUES (?, ?, ?)';",
     "$$stmt = $$pdo->prepare($$sql);",
     "",
     "$$data = [",

@@ -22,7 +22,7 @@ SnipGenius includes the following PHP snippets:
   ```
 
 - **`SELECT Query`**
-  Prefix: `dbread`
+  Prefix: `dbread` <br>
   Description: Generates a procedural `SELECT query`.
 
   ```php
@@ -38,7 +38,7 @@ SnipGenius includes the following PHP snippets:
   ```
 
 - **`Insert Query`**
-  Prefix: `dbwrite`
+  Prefix: `dbwrite` <br>
   Description: Generates a procedural `INSERT` statement.
 
   ```php
@@ -634,313 +634,616 @@ try {
   Prefix: `date`
   Description: Gets the current date and time.
 
-![Date and Time Screenshot](images/date.png)
+  ```php
+  echo date('Y-m-d H:i:s');
+  ```
 
 - **`DateTime Format 1`**
   Prefix: `datetime1`
   Description: Outputs the current date and time in the format dd/mm/yy HH:mm:ss.
 
-![DateTime Format 1 Screenshot](images/datetime1.png)
+  ```php
+  echo date('d/m/y H:i:s'); // Example: 11/12/24 16:30:59
+  ```
 
 - **`Date Format 1`**
   Prefix: `dMy`
   Description: Outputs the current date in the format dd M yyyy.
 
-![Date Format 1 Screenshot](images/dMy.png)
+  ```php
+  echo date('d M Y'); // Example: 11 Dec 2024
+  ```
 
 - **`Time Format 1`**
   Prefix: `timeA`
   Description: Outputs the current time in the format h:i AM/PM.
 
-![Time Format 1 Screenshot](images/timeA.png)
+  ```php
+  echo date('g:i A'); // Example: 4:30 PM
+  ```
 
 - **`Day and Month Format`**
   Prefix: `daymonth`
   Description: Outputs the current day and month in the format l F Y.
 
-![Day and Month Format Screenshot](images/daymonth.png)
+  ```php
+  echo date('l F Y'); // Example: Wednesday June 2024
+  ```
 
 - **`Print Array`**
   Prefix: `pra`
   Description: Prints an array in a readable format.
 
-![Print Array Screenshot](images/pra.png)
+  ```php
+  echo '<pre>';
+  print_r($array);
+  echo '</pre>';
+  ```
 
 - **`Check Variable Set`**
-  Prefix: `issetcheck`
+  Prefix: `issc`
   Description: Checks if a variable is set.
 
-![Check Variable Set Screenshot](images/issetcheck.png)
+  ```php
+  if (isset($variable)) {
+    // Variable is set
+  } else {
+    // Variable is not set
+  }
+  ```
 
 - **`File Upload`**
   Prefix: `fileupload`
   Description: Handles file upload.
 
-![File Upload Screenshot](images/fileupload.png)
+  ```php
+  if ($_FILES['']['error'] == UPLOAD_ERR_OK) {
+    move_uploaded_file($_FILES['']['tmp_name'], '');
+    echo 'File uploaded successfully';
+  } else {
+    echo 'File upload error: ' . $_FILES['']['error'];
+  }
+  ```
 
 - **`Generate Random String`**
   Prefix: `randstring`
   Description: Generates a random string of a given length.
 
-![Generate Random String Screenshot](images/randstring.png)
+  ```php
+  $length = ;
+  $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $randomString = '';
+  for ($i = 0; $i < $length; $i++) {
+    $randomString .= $chars[rand(0, strlen($chars) - 1)];
+  }
+  echo $randomString;
+  ```
 
 - **`Send Email`**
   Prefix: `sendemail`
   Description: Sends an email.
 
-![Send Email Screenshot](images/sendemail.png)
+  ```php
+  $to = '';
+  $subject = '';
+  $message = '';
+  $headers = 'From: no-reply@example.com';
+  mail($to, $subject, $message, $headers);
+  ```
 
 - **`Check File Exists`**
   Prefix: `fileexists`
   Description: Checks if a file exists.
 
-![Check File Exists Screenshot](images/fileexists.png)
+  ```php
+  if (file_exists('')) {
+    echo 'File exists';
+  } else {
+    echo 'File does not exist';
+  }
+  ```
 
 - **`Read File`**
   Prefix: `readfile`
   Description: Reads the content of a file.
 
-![Read File Screenshot](images/readfile.png)
+  ```php
+  $content = file_get_contents('');
+  if ($content !== false) {
+    echo $content;
+  } else {
+    echo 'Failed to read file';
+  }
+  ```
 
 - **`Write to File`**
   Prefix: `writefile`
   Description: Writes content to a file.
 
-![Write to File Screenshot](images/writefile.png)
+  ```php
+  $content = '';
+  file_put_contents('', $content);
+  echo 'File written successfully';
+  ```
 
 - **`Sanitize Input`**
   Prefix: `sanitize`
   Description: Sanitizes input data.
 
-![Sanitize Input Screenshot](images/sanitize.png)
+  ```php
+  $input = filter_var('', FILTER_SANITIZE_STRING);
+  echo $input;
+  ```
 
 - **`Validate Email`**
-  Prefix: `validateemail`
+  Prefix: `vemail`
   Description: Validates an email address.
 
-![Validate Email Screenshot](images/validateemail.png)
+  ```php
+  $email = '';
+  if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo 'Valid email address';
+  } else {
+    echo 'Invalid email address';
+  }
+  ```
 
 - **`Generate UUID`**
   Prefix: `uuid`
   Description: Generates a UUID.
 
-![Generate UUID Screenshot](images/uuid.png)
+  ```php
+  $uuid = bin2hex(random_bytes(16));
+  $uuid = vsprintf('%s-%s-%s-%s-%s', str_split($uuid, 4));
+  echo $uuid;
+  ```
 
 - **`Check Array`**
-  Prefix: `isarray`
+  Prefix: `isarr`
   Description: Checks if a variable is an array.
 
-![Check Array Screenshot](images/isarray.png)
+  ```php
+  if (is_array($variable)) {
+    echo 'Variable is an array';
+  } else {
+    echo 'Variable is not an array';
+  }
+  ```
 
 - **`Array to JSON`**
-  Prefix: `arraytojson`
+  Prefix: `arrtojson`
   Description: Converts an array to JSON format.
 
-![Array to JSON Screenshot](images/arraytojson.png)
+  ```php
+  $json = json_encode($array);
+  echo $json;
+  ```
 
 - **`JSON to Array`**
   Prefix: `jsontoarray`
   Description: Decodes JSON string to an array.
 
-![JSON to Array Screenshot](images/jsontoarray.png)
+  ```php
+  $array = json_decode('', true);
+  print_r($array);
+  ```
 
 - **`String Contains`**
   Prefix: `strcontains`
   Description: Checks if a string contains a substring.
 
-![String Contains Screenshot](images/strcontains.png)
+  ```php
+  if (strpos('', '') !== false) {
+    echo 'Substring found';
+  } else {
+    echo 'Substring not found';
+  }
+  ```
 
 - **`Current Timestamp`**
   Prefix: `timestamp`
   Description: Gets the current Unix timestamp.
 
-![Current Timestamp Screenshot](images/timestamp.png)
+  ```php
+  $timestamp = time();
+  echo $timestamp;
+  ```
 
 - **`Date Difference`**
   Prefix: `datediff`
   Description: Calculates the difference between two dates.
 
-![Date Difference Screenshot](images/datediff.png)
+  ```php
+  $date1 = new DateTime('');
+  $date2 = new DateTime('');
+  $interval = $date1->diff($date2);
+  echo $interval->format('%y years, %m months, %d days');
+  ```
 
 - **`Check Empty`**
   Prefix: `isempty`
   Description: Checks if a variable is empty.
 
-![Check Empty Screenshot](images/isempty.png)
+  ```php
+  if (empty($variable)) {
+    echo 'Variable is empty';
+  } else {
+    echo 'Variable is not empty';
+  }
+  ```
 
 - **`Validate URL`**
   Prefix: `vurl`
   Description: Validates a URL.
 
-![Validate URL Screenshot](images/vurl.png)
+  ```php
+  $url = '';
+  if (filter_var($url, FILTER_VALIDATE_URL)) {
+    echo 'Valid URL';
+  } else {
+    echo 'Invalid URL';
+  }
+  ```
 
 - **`Format Date`**
   Prefix: `formatdate`
   Description: Formats a date.
 
-![Format Date Screenshot](images/formatdate.png)
+  ```php
+  $date = new DateTime('');
+  echo $date->format('');
+  ```
 
 - **`Trim Whitespace`**
   Prefix: `trimspace`
   Description: Trims whitespace from a string.
 
-![Trim Whitespace Screenshot](images/trimspace.png)
+  ```php
+  $trimmed = trim('');
+  echo $trimmed;
+  ```
 
 - **`To Uppercase`**
   Prefix: `toupper`
   Description: Converts a string to uppercase.
 
-![To Uppercase Screenshot](images/toupper.png)
+  ```php
+  $uppercase = strtoupper('');
+  echo $uppercase;
+  ```
 
 - **`To Lowercase`**
   Prefix: `tolower`
   Description: Converts a string to lowercase.
 
-![To Lowercase Screenshot](images/tolower.png)
+  ```php
+  $lowercase = strtolower('');
+  echo $lowercase;
+  ```
 
 - **`Check Writable`**
   Prefix: `iswritable`
   Description: Checks if a file is writable.
 
-![Check Writable Screenshot](images/iswritable.png)
+  ```php
+  if (is_writable('')) {
+    echo 'File is writable';
+  } else {
+    echo 'File is not writable';
+  }
+  ```
 
 - **`File Size`**
   Prefix: `filesize`
   Description: Calculates the size of a file in bytes.
 
-![File Size Screenshot](images/filesize.png)
+  ```php
+  $size = filesize('');
+  echo 'File size: ' . $size . ' bytes';
+  ```
 
 - **`File Extension`**
   Prefix: `fileext`
   Description: Gets the extension of a file.
 
-![File Extension Screenshot](images/fileext.png)
+```php
+$extension = pathinfo('', PATHINFO_EXTENSION);
+echo 'File extension: ' . $extension;
+```
 
 - **`Count Words`**
   Prefix: `countwords`
   Description: Counts the number of words in a string.
 
-![Count Words Screenshot](images/countwords.png)
+  ```php
+  $wordCount = str_word_count('');
+  echo 'Word count: ' . $wordCount;
+  ```
 
 - **`Replace Text`**
   Prefix: `replacetext`
   Description: Replaces text in a string.
 
-![Replace Text Screenshot](images/replacetext.png)
+  ```php
+  $newString = str_replace('', '', '');
+  echo $newString;
+  ```
 
 - **`Find Text`**
   Prefix: `findtext`
   Description: Finds text in a string.
 
-![Find Text Screenshot](images/findtext.png)
+  ```php
+  $position = strpos('', '');
+  if ($position !== false) {
+    echo 'Text found at position: ' . $position;
+  } else {
+    echo 'Text not found';
+  }
+  ```
 
 - **`Extract Substring`**
-  Prefix: `substring`
+  Prefix: `substr`
   Description: Extracts a substring from a string.
 
-![Extract Substring Screenshot](images/substring.png)
+  ```php
+  $substring = substr('', , );
+  echo $substring;
+  ```
 
 - **`Random Integer`**
   Prefix: `rint`
   Description: Generates a random integer between min and max values.
 
-![Random Integer Screenshot](images/rint.png)
+  ```php
+  $min = "";
+  $max = "";
+  $randomInt = rand($min, $max);
+  echo $randomInt;
+  ```
 
 - **`String Length`**
   Prefix: `strlen`
   Description: Calculates the length of a string.
 
-![String Length Screenshot](images/strlen.png)
+  ```php
+  $length = strlen('');
+  echo 'String length: ' . $length;
+  ```
 
 - **`File Modification Time`**
   Prefix: `filemtime`
   Description: Gets the last modification time of a file.
 
-![File Modification Time Screenshot](images/filemtime.png)
+  ```php
+  $mtime = filemtime('');
+  echo 'File last modified: ' . date('Y-m-d H:i:s', $mtime);
+  ```
 
 - **`Validate Integer`**
   Prefix: `vint`
   Description: Validates if a value is an integer.
 
-![Validate Integer Screenshot](images/vint.png)
+  ```php
+  $number = '';
+  if (filter_var($number, FILTER_VALIDATE_INT) !== false) {
+    echo 'Valid integer';
+  } else {
+    echo 'Invalid integer';
+  }
+  ```
 
 - **`For loop`**
   Prefix: `for`
   Description: Creates a for loop.
 
-![For Loop Screenshot](images/for.png)
+  ```php
+  for($i = 0, $i < condition, $i ++)
+  {
+  echo $i;
+  }
+  ```
 
 - **`Constructor method`**
   Prefix: `_c`
   Description: Creates a constructor method.
 
-![Constructor Method Screenshot](images/_c.png)
+  ```php
+  public function __construct($parameters)
+  {
+
+  }
+  ```
 
 - **`Error Logging`**
   Prefix: `errorlog`
   Description: Logs errors to the PHP error log file.
 
-![Error Logging Screenshot](images/errorlog.png)
+  ```php
+  if (!$result) {
+    error_log('Error: ' . mysqli_error($conn));
+  }
+  ```
 
 - **`Custom Error Handler`**
   Prefix: `errorCustom`
   Description: Sets a custom error handler function.
 
-![Custom Error Handler Screenshot](images/errorCustom.png)
+  ```php
+  function customError($errno, $errstr, $errfile, $errline) {
+    echo "Error: [$errno] $errstr - $errfile:$errline\n";
+    // You can also log errors or handle them differently here
+  }
+  set_error_handler('customError');
+
+  // Example usage
+  $result = someFunction();
+  if (!$result) {
+    trigger_error('Something went wrong!', E_USER_ERROR);
+  }
+  ```
 
 - **`Shorthand If Statement`**
   Prefix: `?if`
   Description: Shorthand if statement (ternary operator) for concise conditional assignments.
 
-![Shorthand If Statement Screenshot](images/?if.png)
+  ```php
+  $result = $condition ? '$trueValue' : '$falseValue';
+  ```
 
 - **`Nested If Statements`**
   Prefix: `iif`
   Description: Creates nested if statements for more complex conditional logic.
 
-![Nested If Statements Screenshot](images/iif.png)
+  ```php
+  if ($condition1) {
+    if ($condition2) {
+      // Code for condition2
+    } else {
+      // Code for the else case of condition2
+    }
+  } else {
+    // Code for the else case of condition1
+  }
+  ```
 
 - **`Switch Statement`**
   Prefix: `switch`
   Description: Creates a switch statement with multiple cases.
 
-![Switch Statement Screenshot](images/switch.png)
+  ```php
+  switch ($expression) {
+    case $label1:
+      // Code block for label1
+      break;
+    case $label2:
+      // Code block for label2
+      break;
+    case $label3:
+      // Code block for label3
+      break;
+    default:
+      // Code block for default case
+  }
+  ```
 
 - **`Do-While Loop`**
   Prefix: `dowhile`
   Description: Creates a do-while loop in PHP.
 
-![Do-While Loop Screenshot](images/dowhile.png)
+  ```php
+  do {
+    // Code block to execute
+  } while ($condition);
+  ```
 
 - **`While Loop`**
   Prefix: `while`
   Description: Creates a while loop in PHP.
 
-![While Loop Screenshot](images/while.png)
+  ```php
+  while ($condition) {
+    // Code block to execute
+  }
+  ```
 
 - **`Array Splice`**
-  Prefix: `array_splice`
+  Prefix: `arr_splice`
   Description: Modifies an array by removing or replacing elements.
 
-![Array Splice Screenshot](images/array_splice.png)
+  ```php
+  $array = [/* array elements */];
+  array_splice($array, $offset, $length, $replacement);
+  // $array now contains the modified array
+  ```
 
 - **`Multidimensional Arrays`**
-  Prefix: `multiarray`
+  Prefix: `multiarr`
   Description: Defines and accesses elements in a multidimensional array.
 
-![Multidimensional Arrays Screenshot](images/multiarray.png)
+  ```php
+  $array = [
+    ["key1" => "value1", "key2" => "value2"],
+    ["key1" => "value3", "key2" => "value4"],
+    ["key1" => "value5", "key2" => "value6"]
+  ];
+
+  // Accessing an element
+  $element = $array[0]["key1"]; // $element is "value1"
+
+  // Loop through multidimensional array
+  foreach ($array as $subArray) {
+    foreach ($subArray as $key => $value) {
+      echo "$key: $value\n";
+    }
+  }
+  ```
 
 - **`Array Functions`**
-  Prefix: `arrayfunc`
+  Prefix: `arrfunc`
   Description: Common PHP array functions and their usage.
 
-![Array Functions Screenshot](images/arrayfunc.png)
+  ```php
+  // array_merge - Merges one or more arrays
+  $mergedArray = array_merge($array1, $array2);
+
+  // array_diff - Computes the difference of arrays
+  $diffArray = array_diff($array1, $array2);
+
+  // array_filter - Filters elements of an array using a callback function
+  $filteredArray = array_filter($array, function($value) {
+    return $value > 10;
+  });
+
+  // array_map - Applies a callback function to each element of the array
+  $mappedArray = array_map(function($value) {
+    return $value * 2;
+  }, $array);
+
+  // array_reduce - Iteratively reduces the array to a single value using a callback function
+  $sum = array_reduce($array, function($carry, $item) {
+    return $carry + $item;
+  }, 0);
+
+  // in_array - Checks if a value exists in an array
+  $exists = in_array($value, $array);
+
+  // array_key_exists - Checks if the given key or index exists in the array
+  $exists = array_key_exists('key', $array);
+
+  // array_slice - Extracts a slice of the array
+  $slice = array_slice($array, 1, 3); // Extracts 3 elements starting from index 1
+
+  // array_splice - Removes and returns a portion of the array
+  $spliced = array_splice($array, 2, 2); // Removes 2 elements starting from index 2
+
+  // sort - Sorts an array
+  sort(array); // Sorts the array in ascending order
+  ```
 
 - **`Multiple Insert PDO`**
   Prefix: `pdoim`
   Description: Performs multiple inserts into a database using PDO.
 
-![Multiple Insert PDO Screenshot](images/pdoim.png)
+  ```php
+  $pdo = new PDO('mysql:host=;dbname=', '', '');
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $sql = 'INSERT INTO tableName (column1, column2, column3) VALUES (?, ?, ?)';
+  $stmt = $pdo->prepare($sql);
+
+  $data = [
+      [, , ],
+      [, , ],
+      // Add more rows as needed
+  ];
+
+  foreach ($data as $row) {
+      $stmt->execute($row);
+  }
+
+  echo 'Records inserted successfully';
+  ```
 
 ## Requirements
 
