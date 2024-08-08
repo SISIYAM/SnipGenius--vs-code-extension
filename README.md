@@ -1474,14 +1474,113 @@ SnipGenius includes the following Javascript snippets:
 - **`Export Class`**  
    Prefix: `ecl`
 
-- **`Alert`**  
+- **`Export Class Extends`**  
+   Prefix: `ece`
+
+- **`Constructor`**  
+   Prefix: `_c`
+
+- **`Method`**  
+   Prefix: `met`
+
+- **`Property Get`**  
+   Prefix: `pge`
+
+- **`Property Set`**  
+   Prefix: `pse`
+
+- **`For Each`**  
+   Prefix: `foreach`
+
+- **`For Of`**  
+   Prefix: `forof`
+
+- **`For In`**  
+   Prefix: `forin`
+
+- **`Anonymous Function`**  
+   Prefix: `anfn`
+
+- **`Named Function`**  
+   Prefix: `nfn`
+
+- **`Destructing Object`**  
+   Prefix: `dob`
+
+- **`Destructing Array`**  
+   Prefix: `dar`
+
+- **`Set Interval`**  
+   Prefix: `sti`
+
+- **`Set Timeout`**  
+   Prefix: `sto`
+
+- **`Promise`**  
+   Prefix: `prom`
+
+- **`Then Catch`**  
+   Prefix: `thenc`
+
+- **`Console Assert`**  
+   Prefix: `cas`
+
+- **`Console Clear`**  
+   Prefix: `ccl`
+
+- **`Console Count`**  
+   Prefix: `cco`
+
+- **`Console Debug`**  
+   Prefix: `cdb`
+
+- **`Console Dir`**  
+   Prefix: `cdi`
+
+- **`Console Error`**  
+   Prefix: `cer`
+
+- **`Console Group`**  
+   Prefix: `cgr`
+
+- **`Console Group End`**  
+   Prefix: `cge`
+
+- **`Console Log`**  
+   Prefix: `clg`
+
+- **`Console Log Object`**  
+   Prefix: `clgo`
+
+- **`Console Trace`**  
+   Prefix: `ctr`
+
+- **`Console Warn`**  
+   Prefix: `cwa`
+
+- **`Console Info`**  
    Prefix: `alert`
 
-- **`Alert`**  
-   Prefix: `alert`
+- **`Console Table`**  
+   Prefix: `clt`
 
-- **`Alert`**  
-   Prefix: `alert`
+- **`Console Time`**  
+   Prefix: `cti`
+
+- **`Console Time End`**  
+   Prefix: `cte`
+
+- **`Object Destructuring`**  
+   Prefix: `obd`
+
+- **`Nested Object Destructuring`**  
+   Prefix: `nobd`
+
+- **`Array Destructuring`**  
+   Prefix: `ard`
+
+- **`Nested Array Destructuring`**  
+   Prefix: `nard`
 
 ## Requirements
 
