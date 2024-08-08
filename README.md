@@ -1277,175 +1277,576 @@ SnipGenius includes the following Javascript snippets:
   ```
 
 - **`Arrow Function`**  
-   Prefix: `=>`
+   Prefix: `arrow`
 
 - **`For Loop`**  
    Prefix: `for`
 
+```javascript
+for (let i = 0; i < ; i++) {
+
+}
+```
+
 - **`While Loop`**  
    Prefix: `while`
+
+```javascript
+let i = 0;
+while (condition) {
+  i++;
+}
+```
 
 - **`Switch Statement`**  
    Prefix: `switch`
 
+```javascript
+switch (variable) {
+  case :
+
+    break;
+case :
+
+break
+  default:
+
+}
+```
+
 - **`Try-Catch`**  
    Prefix: `trycatch`
+
+```javascript
+try {
+} catch (error) {
+  console.error(error);
+}
+```
 
 - **`Object Declaration`**  
    Prefix: `object`
 
+```javascript
+const name = {
+  key1: "",
+  key2: "",
+};
+```
+
 - **`Array Declaration`**  
    Prefix: `array`
+
+```javascript
+const name = ["", "", ""];
+```
 
 - **`Date Object`**  
    Prefix: `date`
 
+```javascript
+const date = new Date("");
+console.log(date);
+```
+
 - **`Fetch API Request`**  
    Prefix: `fetch`
+
+```javascript
+fetch("url")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+```
 
 - **`Local Storage Get Item`**  
    Prefix: `getlocal`
 
+```javascript
+const value = localStorage.getItem("key");
+console.log(value);
+```
+
 - **`Local Storage Set Item`**  
    Prefix: `setlocal`
+
+```javascript
+localStorage.setItem("key", "value");
+```
 
 - **`Session Storage Get Item`**  
    Prefix: `getsession`
 
+```javascript
+const value = sessionStorage.getItem("key");
+console.log(value);
+```
+
 - **`Session Storage Set Item`**  
    Prefix: `setsession`
+
+```javascript
+sessionStorage.setItem("key", "value");
+```
 
 - **`Event Listener`**  
    Prefix: `addevent`
 
+```javascript
+element.addEventListener("event", (e) => {});
+```
+
 - **`Debounce Function`**  
    Prefix: `debounce`
+
+```javascript
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+```
 
 - **`Generate UUID`**  
    Prefix: `uuid`
 
+```javascript
+function generateUUID() {
+  return "xxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    const r = (Math.random() * 16) | 0,
+      v = c === "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+```
+
 - **`Array Contains`**  
    Prefix: `includes`
+
+```javascript
+const result = array.includes();
+```
 
 - **`Fetch Data with Error Handling`**  
    Prefix: `fetchError`
 
+```javascript
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Network response was not ok");
+    return await response.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+}
+```
+
 - **`Check Array Duplicates`**  
    Prefix: `hasDup`
 
+```javascript
+function hasDuplicates(array) {
+  return new Set(array).size !== array.length;
+}
+```
+
 - **`Form Data to Object`**  
-   Prefix: `formToObj`
+   Prefix: `form:Obj`
+
+```javascript
+function formDataToObject(formData) {
+  const obj = {};
+  formData.forEach((value, key) => {
+    obj[key] = value;
+  });
+  return obj;
+}
+```
 
 - **`Capitalize Words`**  
    Prefix: `captWords`
 
+```javascript
+function capitalizeWords(str) {
+  return str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
+}
+```
+
 - **`Check Palindrome`**  
    Prefix: `isPalindrome`
+
+```javascript
+function isPalindrome(str) {
+  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return cleaned === cleaned.split("").reverse().join("");
+}
+```
 
 - **`Format Currency`**  
    Prefix: `formatCurrency`
 
+```javascript
+function formatCurrency(amount, currency = "USD") {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: currency,
+  }).format(amount);
+}
+```
+
 - **`AJAX Request with XMLHttpRequest`**  
    Prefix: `ajaxXml`
+
+```javascript
+function fetchData(url, callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.onload = function () {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      callback(null, JSON.parse(xhr.responseText));
+    } else {
+      callback(new Error("Request failed with status " + xhr.status));
+    }
+  };
+  xhr.onerror = function () {
+    callback(new Error("Network error"));
+  };
+  xhr.send();
+}
+```
 
 - **`jQuery AJAX GET Request`**  
    Prefix: `jqAjaxGet`
 
+```javascript
+$.ajax({
+  url: "http://example.com/api",
+  type: "GET",
+  success: function (data) {
+    console.log(data);
+  },
+  error: function (xhr, status, error) {
+    console.error("AJAX Error:", error);
+  },
+});
+```
+
 - **`jQuery AJAX POST Request`**  
    Prefix: `jqAjaxPost`
+
+```javascript
+$.ajax({
+  url: "http://example.com/api",
+  type: "POST",
+  data: { key1: "value1", key2: "value2" },
+  success: function (data) {
+    console.log(data);
+  },
+  error: function (xhr, status, error) {
+    console.error("AJAX Error:", error);
+  },
+});
+```
 
 - **`jQuery AJAX`**  
    Prefix: `jqAjax`
 
+```javascript
+$.ajax({
+  url: "http://example.com/api",
+  type: "GET",
+  dataType: "json",
+  success: function (data) {
+    console.log(data);
+  },
+  error: function (xhr, status, error) {
+    console.error("AJAX Error:", error);
+  },
+});
+```
+
 - **`jQuery AJAX Request with Headers`**  
    Prefix: `jqAjaxHeaders`
+
+```javascript
+$.ajax({
+  url: "http://example.com/api",
+  type: "GET",
+  headers: {
+    Authorization: "Bearer token",
+    "Another-Header": "HeaderValue",
+  },
+  success: function (data) {
+    console.log(data);
+  },
+  error: function (xhr, status, error) {
+    console.error("AJAX Error:", error);
+  },
+});
+```
 
 - **`Select Element by ID`**  
    Prefix: `selectId`
 
+```javascript
+const element = document.getElementById("elementId");
+```
+
 - **`Select Elements by Class Name`**  
    Prefix: `selectClass`
+
+```javascript
+const elements = document.getElementsByClassName("className");
+```
 
 - **`Select Elements by Tag Name`**  
    Prefix: `selectTag`
 
+```javascript
+const elements = document.getElementsByTagName("tagName");
+```
+
 - **`Select Single Element by Query Selector`**  
    Prefix: `selectQuery`
+
+```javascript
+const element = document.querySelector("selector");
+```
 
 - **`Select Multiple Elements by Query Selector`**  
    Prefix: `selectQueryAll`
 
+```javascript
+const elements = document.querySelectorAll("selector");
+```
+
 - **`Create a New Element`**  
    Prefix: `crte`
+
+```javascript
+const newElement = document.createElement("tagName");
+```
 
 - **`Append Element to Parent`**  
    Prefix: `apdc`
 
+```javascript
+const parentElement = document.querySelector("parentSelector");
+const childElement = document.createElement("childTag");
+parentElement.appendChild(childElement);
+```
+
 - **`Remove Element`**  
    Prefix: `rmve`
+
+```javascript
+const element = document.querySelector("selector");
+if (element) {
+  element.remove();
+}
+```
 
 - **`Set Element Text Content`**  
    Prefix: `setText`
 
+```javascript
+const element = document.querySelector("selector");
+if (element) {
+  element.textContent = "text";
+}
+```
+
 - **`Set Element HTML Content`**  
    Prefix: `setHTML`
+
+```javascript
+const element = document.querySelector("selector");
+if (element) {
+  element.innerHTML = "html";
+}
+```
 
 - **`Generate Random Number`**  
    Prefix: `randNum`
 
+```javascript
+const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+```
+
 - **`Check for Empty Object`**  
    Prefix: `isEmptyObject`
+
+```javascript
+function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0 && obj.constructor === Object;
+}
+```
 
 - **`Merge Objects`**  
    Prefix: `mergeObj`
 
+```javascript
+const merged = Object.assign({}, obj1, obj2);
+```
+
 - **`Clone Array`**  
    Prefix: `cloneArray`
 
+```javascript
+const clonedArray = [...originalArray];
+```
+
 - **`Form Data to JSON`**  
-   Prefix: `formToJSON`
+   Prefix: `form:JSON`
+
+```javascript
+function formDataToJSON(formData) {
+  const obj = {};
+  formData.forEach((value, key) => {
+    obj[key] = value;
+  });
+  return obj;
+}
+
+const form = document.querySelector("formSelector");
+const formData = new FormData(form);
+const jsonData = formDataToJSON(formData);
+```
 
 - **`Add CSS Class to Element`**  
    Prefix: `addClass`
 
+```javascript
+const element = document.querySelector("selector");
+if (element) {
+  element.classList.add("className");
+}
+```
+
 - **`Remove CSS Class from Element`**  
    Prefix: `removeClass`
+
+```javascript
+const element = document.querySelector("selector");
+if (element) {
+  element.classList.remove("className");
+}
+```
 
 - **`Toggle CSS Class on Element`**  
    Prefix: `toggleClass`
 
+```javascript
+const element = document.querySelector("selector");
+if (element) {
+  element.classList.toggle("className");
+}
+```
+
 - **`Convert NodeList to Array`**  
-   Prefix: `nodeListToArray`
+   Prefix: `nla`
+
+```javascript
+const array = Array.from(document.querySelectorAll("selector"));
+```
 
 - **`Get URL Parameters`**  
-   Prefix: `getURLParams`
+   Prefix: `gup`
+
+```javascript
+function getURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  const obj = {};
+  params.forEach((value, key) => {
+    obj[key] = value;
+  });
+  return obj;
+}
+
+const queryParams = getURLParams();
+```
 
 - **`Arrow Function with Implicit Return`**  
-   Prefix: `arrowFuncImplicit`
+   Prefix: `afi`
+
+```javascript
+const functionName = (parameters) => expression;
+```
 
 - **`Arrow Function for Array map`**  
-   Prefix: `mapArrowFunc`
+   Prefix: `map`
+
+```javascript
+array.map((elements) => {
+  // transform element
+});
+```
 
 - **`Arrow Function for Array filter`**  
-   Prefix: `filterArrowFunc`
+   Prefix: `faf`
+
+```javascript
+array.filter((element) => {
+  // condition
+});
+```
 
 - **`Arrow Function for Array reduce`**  
-   Prefix: `reduceArrowFunc`
+   Prefix: `raf`
+
+```javascript
+array.reduce((accumulator, currentValue) => {
+  // calculation
+}, initialValue);
+```
 
 - **`Arrow Function with Object Destructuring`**  
-   Prefix: `arrowFuncDestruct`
+   Prefix: `afd`
+
+```javascript
+const functionName = ({ prop1, prop2 }) => {
+  // function body
+};
+```
 
 - **`Arrow Function with Array Destructuring`**  
-   Prefix: `arrowFuncArrayDestruct`
+   Prefix: `afad`
+
+```javascript
+const functionName = ([element1, element2]) => {
+  // function body
+};
+```
 
 - **`Arrow Function for Event Listener`**  
-   Prefix: `arrowEventListener`
+   Prefix: `ael`
+
+```javascript
+document.querySelector("selector").addEventListener("event", (event) => {
+  // handler code
+});
+```
 
 - **`Import`**  
    Prefix: `imp`
 
+```javascript
+import moduleName from "module";
+```
+
 - **`Import Destructing`**  
    Prefix: `imd`
+
+```javascript
+import {} from "module";
+```
 
 - **`Import Everything`**  
    Prefix: `ime`

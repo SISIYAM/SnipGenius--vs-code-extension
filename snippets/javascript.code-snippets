@@ -20,7 +20,7 @@
     "description": "Declares a function. Replace functionName with the function name and params with parameters."
   },
   "Arrow Function  -SnipGenius": {
-    "prefix": "=>",
+    "prefix": "arrow",
     "body": ["const functionName = (params) => {", "  $1", "};"],
     "description": "Creates an arrow function. Replace functionName with the function name and params with parameters."
   },
@@ -178,7 +178,7 @@
     "description": "Checks if an array contains duplicate values."
   },
   "Form Data to Object  -SnipGenius": {
-    "prefix": "formToObj",
+    "prefix": "form:Obj",
     "body": [
       "function formDataToObject(formData) {",
       "    const obj = {};",
@@ -411,7 +411,7 @@
     "description": "Clones an array using the spread operator."
   },
   "Form Data to JSON -SnipGenius": {
-    "prefix": "formToJSON",
+    "prefix": "form:JSON",
     "body": [
       "function formDataToJSON(formData) {",
       "    const obj = {};",
@@ -458,14 +458,14 @@
     "description": "Toggles a CSS class on an element."
   },
   "Convert NodeList to Array -SnipGenius": {
-    "prefix": "nodeListToArray",
+    "prefix": "nla",
     "body": [
       "const array = Array.from(document.querySelectorAll('${1:selector}'));"
     ],
     "description": "Converts a NodeList to an Array."
   },
   "Get URL Parameters -SnipGenius": {
-    "prefix": "getURLParams",
+    "prefix": "gup",
     "body": [
       "function getURLParams() {",
       "    const params = new URLSearchParams(window.location.search);",
@@ -481,12 +481,12 @@
     "description": "Gets URL parameters as an object."
   },
   "Arrow Function with Implicit Return -SnipGenius": {
-    "prefix": "arrowFuncImplicit",
+    "prefix": "afi",
     "body": ["const ${1:functionName} = (${2:parameters}) => ${3:expression};"],
     "description": "Creates an arrow function with an implicit return."
   },
   "Arrow Function for Array map -SnipGenius": {
-    "prefix": "mapArrowFunc",
+    "prefix": "map",
     "body": [
       "${1:array}.map(${2:element} => {",
       "    ${3:// transform element}",
@@ -495,7 +495,7 @@
     "description": "Creates an arrow function to use with the `map` method."
   },
   "Arrow Function for Array filter -SnipGenius": {
-    "prefix": "filterArrowFunc",
+    "prefix": "faf",
     "body": [
       "${1:array}.filter(${2:element} => {",
       "    ${3:// condition}",
@@ -504,7 +504,7 @@
     "description": "Creates an arrow function to use with the `filter` method."
   },
   "Arrow Function for Array reduce -SnipGenius": {
-    "prefix": "reduceArrowFunc",
+    "prefix": "raf",
     "body": [
       "${1:array}.reduce((${2:accumulator}, ${3:currentValue}) => {",
       "    ${4:// calculation}",
@@ -513,7 +513,7 @@
     "description": "Creates an arrow function to use with the `reduce` method."
   },
   "Arrow Function with Object Destructuring -SnipGenius": {
-    "prefix": "arrowFuncDestruct",
+    "prefix": "afd",
     "body": [
       "const ${1:functionName} = ({ ${2:prop1}, ${3:prop2} }) => {",
       "    ${4:// function body}",
@@ -522,7 +522,7 @@
     "description": "Creates an arrow function with object destructuring in parameters."
   },
   "Arrow Function with Array Destructuring -SnipGenius": {
-    "prefix": "arrowFuncArrayDestruct",
+    "prefix": "afad",
     "body": [
       "const ${1:functionName} = ([${2:element1}, ${3:element2}]) => {",
       "    ${4:// function body}",
@@ -531,7 +531,7 @@
     "description": "Creates an arrow function with array destructuring in parameters."
   },
   "Arrow Function for Event Listener -SnipGenius": {
-    "prefix": "arrowEventListener",
+    "prefix": "ael",
     "body": [
       "document.querySelector('${1:selector}').addEventListener('${2:event}', (${3:event}) => {",
       "    ${4:// handler code}",
