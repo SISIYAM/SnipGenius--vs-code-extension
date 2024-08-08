@@ -22,7 +22,7 @@ SnipGenius includes the following PHP snippets:
   ```
 
 - **`SELECT Query`**
-  Prefix: `dbread` <br>
+  Prefix: `dbread`
   Description: Generates a procedural `SELECT query`.
 
   ```php
@@ -38,7 +38,7 @@ SnipGenius includes the following PHP snippets:
   ```
 
 - **`Insert Query`**
-  Prefix: `dbwrite` <br>
+  Prefix: `dbwrite`
   Description: Generates a procedural `INSERT` statement.
 
   ```php
@@ -1244,6 +1244,48 @@ echo 'File extension: ' . $extension;
 
   echo 'Records inserted successfully';
   ```
+
+SnipGenius includes the following Javascript snippets:
+
+- **`Alert Message`**  
+   Prefix: `alert`
+
+  ```javascript
+  alert("");
+  ```
+
+- **`Prompt User`**  
+   Prefix: `prompt`
+
+- **`Declare Variable`**  
+   Prefix: `let`
+
+- **`Function Declaration`**  
+   Prefix: `func`
+
+- **`Arrow Function`**  
+   Prefix: `=>`
+
+- **`Alert`**  
+   Prefix: `alert`
+
+- **`Alert`**  
+   Prefix: `alert`
+
+- **`Alert`**  
+   Prefix: `alert`
+
+- **`Alert`**  
+   Prefix: `alert`
+
+- **`Alert`**  
+   Prefix: `alert`
+
+- **`Alert`**  
+   Prefix: `alert`
+
+- **`Alert`**  
+   Prefix: `alert`
 
 ## Requirements
 

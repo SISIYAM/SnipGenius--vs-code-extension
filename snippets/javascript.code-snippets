@@ -20,7 +20,7 @@
     "description": "Declares a function. Replace functionName with the function name and params with parameters."
   },
   "Arrow Function  -SnipGenius": {
-    "prefix": "arrow",
+    "prefix": "=>",
     "body": ["const functionName = (params) => {", "  $1", "};"],
     "description": "Creates an arrow function. Replace functionName with the function name and params with parameters."
   },
