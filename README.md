@@ -1257,26 +1257,222 @@ SnipGenius includes the following Javascript snippets:
 - **`Prompt User`**  
    Prefix: `prompt`
 
+  ```javascript
+  const input = prompt("");
+  console.log(input);
+  ```
+
 - **`Declare Variable`**  
    Prefix: `let`
+
+  ```javascript
+  let name = ;
+  ```
 
 - **`Function Declaration`**  
    Prefix: `func`
 
+  ```javascript
+  function functionName(params) {}
+  ```
+
 - **`Arrow Function`**  
    Prefix: `=>`
 
-- **`Alert`**  
-   Prefix: `alert`
+- **`For Loop`**  
+   Prefix: `for`
 
-- **`Alert`**  
-   Prefix: `alert`
+- **`While Loop`**  
+   Prefix: `while`
 
-- **`Alert`**  
-   Prefix: `alert`
+- **`Switch Statement`**  
+   Prefix: `switch`
 
-- **`Alert`**  
-   Prefix: `alert`
+- **`Try-Catch`**  
+   Prefix: `trycatch`
+
+- **`Object Declaration`**  
+   Prefix: `object`
+
+- **`Array Declaration`**  
+   Prefix: `array`
+
+- **`Date Object`**  
+   Prefix: `date`
+
+- **`Fetch API Request`**  
+   Prefix: `fetch`
+
+- **`Local Storage Get Item`**  
+   Prefix: `getlocal`
+
+- **`Local Storage Set Item`**  
+   Prefix: `setlocal`
+
+- **`Session Storage Get Item`**  
+   Prefix: `getsession`
+
+- **`Session Storage Set Item`**  
+   Prefix: `setsession`
+
+- **`Event Listener`**  
+   Prefix: `addevent`
+
+- **`Debounce Function`**  
+   Prefix: `debounce`
+
+- **`Generate UUID`**  
+   Prefix: `uuid`
+
+- **`Array Contains`**  
+   Prefix: `includes`
+
+- **`Fetch Data with Error Handling`**  
+   Prefix: `fetchError`
+
+- **`Check Array Duplicates`**  
+   Prefix: `hasDup`
+
+- **`Form Data to Object`**  
+   Prefix: `formToObj`
+
+- **`Capitalize Words`**  
+   Prefix: `captWords`
+
+- **`Check Palindrome`**  
+   Prefix: `isPalindrome`
+
+- **`Format Currency`**  
+   Prefix: `formatCurrency`
+
+- **`AJAX Request with XMLHttpRequest`**  
+   Prefix: `ajaxXml`
+
+- **`jQuery AJAX GET Request`**  
+   Prefix: `jqAjaxGet`
+
+- **`jQuery AJAX POST Request`**  
+   Prefix: `jqAjaxPost`
+
+- **`jQuery AJAX`**  
+   Prefix: `jqAjax`
+
+- **`jQuery AJAX Request with Headers`**  
+   Prefix: `jqAjaxHeaders`
+
+- **`Select Element by ID`**  
+   Prefix: `selectId`
+
+- **`Select Elements by Class Name`**  
+   Prefix: `selectClass`
+
+- **`Select Elements by Tag Name`**  
+   Prefix: `selectTag`
+
+- **`Select Single Element by Query Selector`**  
+   Prefix: `selectQuery`
+
+- **`Select Multiple Elements by Query Selector`**  
+   Prefix: `selectQueryAll`
+
+- **`Create a New Element`**  
+   Prefix: `crte`
+
+- **`Append Element to Parent`**  
+   Prefix: `apdc`
+
+- **`Remove Element`**  
+   Prefix: `rmve`
+
+- **`Set Element Text Content`**  
+   Prefix: `setText`
+
+- **`Set Element HTML Content`**  
+   Prefix: `setHTML`
+
+- **`Generate Random Number`**  
+   Prefix: `randNum`
+
+- **`Check for Empty Object`**  
+   Prefix: `isEmptyObject`
+
+- **`Merge Objects`**  
+   Prefix: `mergeObj`
+
+- **`Clone Array`**  
+   Prefix: `cloneArray`
+
+- **`Form Data to JSON`**  
+   Prefix: `formToJSON`
+
+- **`Add CSS Class to Element`**  
+   Prefix: `addClass`
+
+- **`Remove CSS Class from Element`**  
+   Prefix: `removeClass`
+
+- **`Toggle CSS Class on Element`**  
+   Prefix: `toggleClass`
+
+- **`Convert NodeList to Array`**  
+   Prefix: `nodeListToArray`
+
+- **`Get URL Parameters`**  
+   Prefix: `getURLParams`
+
+- **`Arrow Function with Implicit Return`**  
+   Prefix: `arrowFuncImplicit`
+
+- **`Arrow Function for Array map`**  
+   Prefix: `mapArrowFunc`
+
+- **`Arrow Function for Array filter`**  
+   Prefix: `filterArrowFunc`
+
+- **`Arrow Function for Array reduce`**  
+   Prefix: `reduceArrowFunc`
+
+- **`Arrow Function with Object Destructuring`**  
+   Prefix: `arrowFuncDestruct`
+
+- **`Arrow Function with Array Destructuring`**  
+   Prefix: `arrowFuncArrayDestruct`
+
+- **`Arrow Function for Event Listener`**  
+   Prefix: `arrowEventListener`
+
+- **`Import`**  
+   Prefix: `imp`
+
+- **`Import Destructing`**  
+   Prefix: `imd`
+
+- **`Import Everything`**  
+   Prefix: `ime`
+
+- **`Import As`**  
+   Prefix: `ima`
+
+- **`Require`**  
+   Prefix: `rqr`
+
+- **`Require to Const`**  
+   Prefix: `req`
+
+- **`Module Exports`**  
+   Prefix: `mde`
+
+- **`Export Named Variable`**  
+   Prefix: `env`
+
+- **`Export Named Function`**  
+   Prefix: `enf`
+
+- **`Export Default Function`**  
+   Prefix: `edf`
+
+- **`Export Class`**  
+   Prefix: `ecl`
 
 - **`Alert`**  
    Prefix: `alert`

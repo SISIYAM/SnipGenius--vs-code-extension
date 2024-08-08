@@ -191,7 +191,7 @@
     "description": "Converts form data into a JavaScript object."
   },
   "Capitalize Words  -SnipGenius": {
-    "prefix": "capitalizeWords",
+    "prefix": "captWords",
     "body": [
       "function capitalizeWords(str) {",
       "    return str.toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase());",
@@ -222,7 +222,7 @@
     "description": "Formats a number as currency."
   },
   "AJAX Request with XMLHttpRequest  -SnipGenius": {
-    "prefix": "ajaxRequest",
+    "prefix": "ajaxXml",
     "body": [
       "function fetchData(url, callback) {",
       "    const xhr = new XMLHttpRequest();",
@@ -313,19 +313,19 @@
     "description": "Makes an AJAX request using jQuery with custom headers."
   },
   "Select Element by ID -SnipGenius": {
-    "prefix": "selectById",
+    "prefix": "selectId",
     "body": ["const element = document.getElementById('${1:elementId}');"],
     "description": "Selects an element by its ID."
   },
   "Select Elements by Class Name -SnipGenius": {
-    "prefix": "selectByClass",
+    "prefix": "selectClass",
     "body": [
       "const elements = document.getElementsByClassName('${1:className}');"
     ],
     "description": "Selects elements by their class name."
   },
   "Select Elements by Tag Name -SnipGenius": {
-    "prefix": "selectByTag",
+    "prefix": "selectTag",
     "body": ["const elements = document.getElementsByTagName('${1:tagName}');"],
     "description": "Selects elements by their tag name."
   },
@@ -340,12 +340,12 @@
     "description": "Selects multiple elements using a Query selector."
   },
   "Create a New Element -SnipGenius": {
-    "prefix": "createElement",
+    "prefix": "crte",
     "body": ["const newElement = document.createElement('${1:tagName}');"],
     "description": "Creates a new HTML element."
   },
   "Append Element to Parent -SnipGenius": {
-    "prefix": "appendChild",
+    "prefix": "apdc",
     "body": [
       "const parentElement = document.querySelector('${1:parentSelector}');",
       "const childElement = document.createElement('${2:childTag}');",
@@ -354,7 +354,7 @@
     "description": "Appends a child element to a parent element."
   },
   "Remove Element -SnipGenius": {
-    "prefix": "removeElement",
+    "prefix": "rmve",
     "body": [
       "const element = document.querySelector('${1:selector}');",
       "if (element) {",
@@ -364,7 +364,7 @@
     "description": "Removes an element from the DOM."
   },
   "Set Element Text Content -SnipGenius": {
-    "prefix": "setTextContent",
+    "prefix": "setText",
     "body": [
       "const element = document.querySelector('${1:selector}');",
       "if (element) {",
@@ -383,18 +383,7 @@
     ],
     "description": "Sets the HTML content of an element."
   },
-  "Add Event Listener -SnipGenius": {
-    "prefix": "addEventListener",
-    "body": [
-      "const element = document.querySelector('${1:selector}');",
-      "if (element) {",
-      "    element.addEventListener('${2:event}', function(event) {",
-      "        ${3:// handler code}",
-      "    });",
-      "}"
-    ],
-    "description": "Adds an event listener to an element."
-  },
+
   "Generate Random Number -SnipGenius": {
     "prefix": "randNum",
     "body": [
@@ -412,7 +401,7 @@
     "description": "Checks if an object is empty (has no properties)."
   },
   "Merge Objects -SnipGenius": {
-    "prefix": "mergeObjects",
+    "prefix": "mergeObj",
     "body": ["const merged = Object.assign({}, ${1:obj1}, ${2:obj2});"],
     "description": "Merges two or more objects into one."
   },
