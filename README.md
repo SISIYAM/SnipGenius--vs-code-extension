@@ -1248,6 +1248,20 @@ echo 'File extension: ' . $extension;
 
 # SnipGenius includes the following Javascript snippets:
 
+- **`Credit`**
+  Prefix: `credit`
+
+  ```javascript
+  /*
+   * Title: SnipGenius
+   * Description: Code snippets for javascript, php and bootstrap
+   * Author: MD Saymum Islam Siyam (CodeSQL)
+   * Email: si31siyam@gmail.com
+   * Portfolio: https://siyam70.netlify.app/
+   * Date:
+   */
+  ```
+
 - **`Alert Message`**  
    Prefix: `alert`
 
@@ -2159,6 +2173,20 @@ echo 'File extension: ' . $extension;
   ```
 
 # SnipGenius includes the following html, Bootstrap snippets:
+
+- **`Credit`**
+  Prefix: `credit`
+
+  ```html
+  <!--
+  * Title:
+  * Description:
+  * Author:
+  * Email:
+  * Portfolio:
+  * Date:
+  -->
+  ```
 
 - **`Input`**  
    Prefix: `inp`

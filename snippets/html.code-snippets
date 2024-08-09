@@ -3,6 +3,19 @@
     "prefix": "php",
     "body": ["<?php ", "$1" "?>"]
   },
+  "Credit -SnipGenius": {
+    "prefix": "credit",
+    "body": [
+      "<!--",
+      "* Title: $1",
+      "* Description: $2",
+      "* Author: $3",
+      "* Email: $4",
+      "* Portfolio: $5",
+      "* Date: $6",
+      "-->"
+    ]
+  },
   "Input -SnipGenius": {
     "prefix": "inp",
     "body": ["<input type=\"$1\" placeholder=\"$2\">"],
