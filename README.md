@@ -1,8 +1,9 @@
-# SnipGenius README
+# SnipGenius
 
-This is the README for your extension "SnipGenius". SnipGenius provides a collection of PHP snippets to simplify common coding tasks. This documentation covers the features, settings, and other relevant details for using this extension.
+"**`SnipGenius`**" is a powerful Code Snippets Extension that aims to save developers valuable time and minimize repetitive typing. Whether you’re working with PHP, JavaScript, or Bootstrap, this extension has your back. 🚀
+This documentation covers the features, settings, and other relevant details for using this extension.
 
-## Features
+- ## Documentation
 
 # SnipGenius includes the following PHP snippets:
 
@@ -3078,10 +3079,22 @@ There are no known issues at the moment. If you encounter any problems, please o
 
 Contributions are welcome! Please submit a pull request or open an issue in the [GitHub repository](https://github.com/SISIYAM/SnipGenius--vs-code-extension.git).
 
+# Please follow these guidelines:
+
+- Fork the repository
+- Create a new branch: `git checkout -b feature/my-feature`
+- Make your changes
+- Commit your changes: `git commit -m "Add my feature"`
+- Push to the branch: `git push origin feature/my-feature`
+- Create a pull request
+
 ## License
 
 This extension is licensed under the MIT License.
+[License](LICENSE)
 
 ---
 
-Enjoy using SnipGenius for your JavaScript,PHP and html development needs!
+- **(`author: MD Saymum Islam Siyam`)**
+
+Enjoy using SnipGenius for your `JavaScript,PHP and html` development needs!

@@ -1,14 +1,37 @@
 {
   "name": "SnipGenius",
   "displayName": "SnipGenius",
-  "description": "",
-  "version": "0.0.1",
-  "icon": "coding.png",
+  "description": "SnipGenius code snippets for javascript, php, html, bootstrap",
+  "version": "1.0.0",
+  "icon": "./logo.png",
+  "publisher": "siyam",
+  "author": {
+    "name": "MD Saymum Islam Siyam",
+    "url": "https://siyam70.netlify.app/",
+    "email": "si31siyam@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SISIYAM/SnipGenius--vs-code-extension.git"
+  },
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.14.0"
   },
   "categories": [
     "Snippets"
+  ],
+  "keywords": [
+    "code snippets",
+    "javascript snippets",
+    "php snippets",
+    "code helper",
+    "js snippets",
+    "js code snippets",
+    "prefix",
+    "html snippets",
+    "html code snippets",
+    "bootstrap snippets",
+    "bootstrap code snippets"
   ],
   "contributes": {
     "snippets": [
