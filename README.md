@@ -4,7 +4,7 @@ This is the README for your extension "SnipGenius". SnipGenius provides a collec
 
 ## Features
 
-SnipGenius includes the following PHP snippets:
+# SnipGenius includes the following PHP snippets:
 
 - **`Database Connection`**  
    Prefix: `dbconn`  
@@ -2157,34 +2157,931 @@ echo 'File extension: ' . $extension;
   const [item1, [nestedItem1, nestedItem2]] = array;
   ```
 
-## Requirements
+# SnipGenius includes the following html, Bootstrap snippets:
 
-This extension does not have any specific dependencies. Ensure you have [Visual Studio Code](https://code.visualstudio.com/) installed to use this extension.
+- **`Input`**  
+   Prefix: `inp`
 
-## Extension Settings
+  ```html
+  <input type="" placeholder="" />
+  ```
 
-This extension does not add any custom VS Code settings through the `contributes.configuration` extension point.
+- **`Label`**  
+   Prefix: `label`
+
+  ```html
+  <label for=""></label>
+  ```
+
+- **`HTML Table`**  
+   Prefix: `table`
+
+  ```html
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+        <td>Row 1, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+- **`HTML Boilerplate`**  
+   Prefix: `html`
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title></title>
+    </head>
+    <body></body>
+  </html>
+  ```
+
+- **`video`**  
+   Prefix: `video`
+
+  ```html
+  <video controls>
+    <source src="" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  ```
+
+- **`Basic Bootstrap Boilerplate`**  
+   Prefix: `bootstrap`
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      />
+    </head>
+    <body>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+  </html>
+  ```
+
+- **`Bootstrap Container`**  
+   Prefix: `container`
+
+  ```html
+  <div class="container">// content here</div>
+  ```
+
+- **`Bootstrap Row and Columns`**  
+   Prefix: `row-cols`
+
+  ```html
+  <div class="container">
+    <div class="row">
+      <div class="col-sm|md|lg|xl">Column 1</div>
+      <div class="col-sm|md|lg|xl">Column 2</div>
+      <div class="col-sm|md|lg|xl">Column 3</div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Navbar`**  
+   Prefix: `navbar`
+
+  ```html
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Brand</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  ```
+
+- **`Bootstrap Card`**  
+   Prefix: `card`
+
+  ```html
+  <div class="card" style="width: 18rem;">
+    <img src="https://via.placeholder.com/150" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Modal`**  
+   Prefix: `modal`
+
+  ```html
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">Modal body text goes here.</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Grid System`**  
+   Prefix: `grid`
+
+  ```html
+  <div class="container">
+    <div class="row">
+      <div class="col-sm|md|lg|xl">Column 1</div>
+      <div class="col-sm|md|lg|xl">Column 2</div>
+      <div class="col-sm|md|lg|xl">Column 3</div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Alert`**  
+   Prefix: `alert`
+
+  ```html
+  <div class="alert alert-success|info|warning|danger" role="alert">
+    This is a success|info|warning|danger alert—check it out!
+  </div>
+  ```
+
+- **`Bootstrap List Group`**  
+   Prefix: `listGroup`
+
+  ```html
+  <ul class="list-group">
+    <li class="list-group-item">First item</li>
+    <li class="list-group-item">Second item</li>
+    <li class="list-group-item">Third item</li>
+  </ul>
+  ```
+
+- **`Bootstrap Breadcrumb`**  
+   Prefix: `breadcrumb`
+
+  ```html
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+  </nav>
+  ```
+
+- **`Bootstrap Carousel`**  
+   Prefix: `carousel`
+
+  ```html
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-ride="carousel"
+  >
+    <ol class="carousel-indicators">
+      <li
+        data-target="#carouselExampleIndicators"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="https://via.placeholder.com/800x400"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://via.placeholder.com/800x400"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://via.placeholder.com/800x400"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  ```
+
+- **`Bootstrap Jumbotron`**  
+   Prefix: `jumbotron`
+
+  ```html
+  <div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">
+      This is a simple hero unit, a simple jumbotron-style component for calling
+      extra attention to featured content or information.
+    </p>
+    <hr class="my-4" />
+    <p>
+      It uses utility classes for typography and spacing to space content out
+      within the larger container.
+    </p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+  ```
+
+- **`Bootstrap Pagination`**  
+   Prefix: `pagination`
+
+  ```html
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  ```
+
+- **`Bootstrap Tooltip`**  
+   Prefix: `tooltip`
+
+  ```html
+  <button
+    type="button"
+    class="btn btn-secondary"
+    data-toggle="tooltip"
+    data-placement="top"
+    title="Tooltip text"
+  >
+    Hover me to see tooltip
+  </button>
+
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+  ```
+
+- **`Bootstrap Form Inline`**  
+   Prefix: `formInline`
+
+  ```html
+  <form class="form-inline">
+    <label class="sr-only" for="inputEmail3">Email</label>
+    <input
+      type="email"
+      class="form-control mb-2 mr-sm-2"
+      id="inputEmail3"
+      placeholder="Email"
+    />
+    <label class="sr-only" for="inputPassword3">Password</label>
+    <input
+      type="password"
+      class="form-control mb-2 mr-sm-2"
+      id="inputPassword3"
+      placeholder="Password"
+    />
+    <div class="form-check mb-2 mr-sm-2">
+      <input class="form-check-input" type="checkbox" id="check1" />
+      <label class="form-check-label" for="check1">Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
+  ```
+
+- **`Bootstrap Toast`**  
+   Prefix: `toast`
+
+  ```html
+  <div aria-live="polite" aria-atomic="true" class="position-relative">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="mr-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button
+          type="button"
+          class="ml-2 mb-1 close"
+          data-dismiss="toast"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">Hello, world! This is a toast message.</div>
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+      $(".toast").toast("show");
+    });
+  </script>
+  ```
+
+- **`Bootstrap Offcanvas`**  
+   Prefix: `offcanvas`
+
+  ```html
+  <div
+    class="offcanvas offcanvas-start|end|top|bottom"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas title</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">Your content here.</div>
+  </div>
+
+  <button
+    class="btn btn-primary"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample"
+  >
+    Toggle Offcanvas
+  </button>
+  ```
+
+- **`Bootstrap Toast with Header`**  
+   Prefix: `toastHeader`
+
+  ```html
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="mr-auto">Notification</strong>
+      <small>Just now</small>
+      <button
+        type="button"
+        class="ml-2 mb-1 close"
+        data-dismiss="toast"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Here is some text to show in the body of the toast.
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+      $(".toast").toast("show");
+    });
+  </script>
+  ```
+
+- **`Bootstrap Accordion`**  
+   Prefix: `accordion`
+
+  ```html
+  <div id="accordionExample" class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-expanded="true"
+          aria-controls="collapseOne"
+        >
+          Accordion Item #1
+        </button>
+      </h2>
+      <div
+        id="collapseOne"
+        class="accordion-collapse collapse show"
+        aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">Content for the first accordion item.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+          Accordion Item #2
+        </button>
+      </h2>
+      <div
+        id="collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">Content for the second accordion item.</div>
+      </div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Floating Labels`**  
+   Prefix: `floatingLabel`
+
+  ```html
+  <div class="form-floating">
+    <input
+      type="text"
+      class="form-control"
+      id="inputId"
+      placeholder="Placeholder"
+    />
+    <label for="inputId">Label</label>
+  </div>
+  ```
+
+- **`Bootstrap Placeholders`**  
+   Prefix: `placeholder`
+
+  ```html
+  <div class="placeholder-lg|md|sm">Placeholder content goes here.</div>
+  ```
+
+- **`Bootstrap Grid System with Nested Columns`**  
+   Prefix: `nestedGrid`
+
+  ```html
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-6">Nested Column 1</div>
+          <div class="col-6">Nested Column 2</div>
+        </div>
+      </div>
+      <div class="col-md-6">Column 2</div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Responsive Embed`**  
+   Prefix: `embedResponsive`
+
+  ```html
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe
+      class="embed-responsive-item"
+      src="https://www.youtube.com/embed/tgbNymZ7vqY"
+      allowfullscreen
+    ></iframe>
+  </div>
+  ```
+
+- **`Bootstrap Media Object`**  
+   Prefix: `media`
+
+  ```html
+  <div class="media">
+    <img src="https://example.com/64" class="mr-3" alt="image" />
+    <div class="media-body">
+      <h5 class="mt-0">Media heading</h5>
+      Some quick example text to build on the media heading and make up the bulk
+      of the media body.
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Spinner`**  
+   Prefix: `spinner`
+
+  ```html
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  ```
+
+- **`Bootstrap Login Form`**  
+   Prefix: `formLogin`
+
+  ```html
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">Login</div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+              <div class="form-check mt-2">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="rememberMe"
+                />
+                <label class="form-check-label" for="rememberMe"
+                  >Remember me</label
+                >
+              </div>
+            </form>
+          </div>
+          <div class="card-footer text-muted">
+            <a href="#">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Registration Form`**  
+   Prefix: `formRegistration`
+
+  ```html
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">Register</div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap File Upload Form`**  
+   Prefix: `formfile`
+
+  ```html
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">File Upload</div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="fileUpload">Choose file</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  id="fileUpload"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  ```
+
+- **`Bootstrap Responsive Image`**  
+   Prefix: `imgresponsive`
+
+  ```html
+  <img src="#" alt="Description" class="img-fluid" />
+  ```
+
+- **`Bootstrap Basic Table`**  
+   Prefix: `table-basic`
+
+  ```html
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+        <td>Row 1, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+- **`Bootstrap Striped Table`**  
+   Prefix: `table-striped`
+
+  ```html
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+        <td>Row 1, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+  - **`Bootstrap Bordered Table`**  
+    Prefix: `table-bordered`
+
+  ```html
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+        <td>Row 1, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+- **`Bootstrap Hoverable Table`**  
+   Prefix: `table-hover`
+
+  ```html
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+        <td>Row 1, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+- **`Bootstrap Responsive Table`**  
+   Prefix: `tableResponsive`
+
+  ```html
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Row 1, Cell 1</td>
+          <td>Row 1, Cell 2</td>
+          <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+          <td>Row 2, Cell 1</td>
+          <td>Row 2, Cell 2</td>
+          <td>Row 2, Cell 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  ```
 
 ## Known Issues
 
-There are no known issues at the moment. If you encounter any problems, please open an issue in the [GitHub repository](https://github.com/your-repo).
+There are no known issues at the moment. If you encounter any problems, please open an issue in the [GitHub repository](https://github.com/SISIYAM/SnipGenius--vs-code-extension.git).
 
 ## Contributing
 
-Contributions are welcome! Please submit a pull request or open an issue in the [GitHub repository](https://github.com/your-repo).
+Contributions are welcome! Please submit a pull request or open an issue in the [GitHub repository](https://github.com/SISIYAM/SnipGenius--vs-code-extension.git).
 
 ## License
 
-This extension is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This extension is licensed under the MIT License.
 
 ---
 
-Enjoy using SnipGenius for your PHP development needs!
-
-```
-
-```
-
-```
-
-```
+Enjoy using SnipGenius for your JavaScript,PHP and html development needs!

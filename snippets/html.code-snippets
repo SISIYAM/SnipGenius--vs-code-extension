@@ -4,7 +4,7 @@
     "body": ["<?php ", "$1" "?>"]
   },
   "Input -SnipGenius": {
-    "prefix": "input",
+    "prefix": "inp",
     "body": ["<input type=\"$1\" placeholder=\"$2\">"],
     "description": "Creates an input field with placeholders"
   },
@@ -41,7 +41,7 @@
     "description": "Basic HTML table structure."
 },
   "HTML Boilerplate -SnipGenius": {
-    "prefix": "html5",
+    "prefix": "html",
     "body": [
       "<!DOCTYPE html>",
       "<html lang=\"en\">",
@@ -57,37 +57,7 @@
     ],
     "description": "Generates a complete HTML5 document structure"
   },
-  "Navigation Bar -SnipGenius": {
-    "prefix": "nav",
-    "body": [
-      "<nav>",
-      "  <ul>",
-      "    <li><a href=\"$1\">$2</a></li>",
-      "  </ul>",
-      "</nav>"
-    ],
-    "description": "Adds a navigation bar"
-  },
-  "Footer -SnipGenius": {
-    "prefix": "footer",
-    "body": ["<footer>", "  <p>$1</p>", "</footer>"],
-    "description": "Creates a footer section"
-  },
-  "Header -SnipGenius": { 
-    "prefix": "header",
-    "body": ["<header>", "  <h1>$1</h1>", "</header>"],
-    "description": "Generates a header section"
-  },
-  "Section -SnipGenius": {
-    "prefix": "section",
-    "body": ["<section class=\"$1\">", "  $0", "</section>"],
-    "description": "Adds a section tag with an optional class"
-  },
-  "Image -SnipGenius": {
-    "prefix": "img",
-    "body": ["<img src=\"$1\" alt=\"$2\" title=\"$3\">"],
-    "description": "Inserts an image tag with src, alt, and title attributes"
-  },
+
   "Video -SnipGenius": {
     "prefix": "video",
     "body": [
@@ -494,7 +464,7 @@
     "description": "Bootstrap grid system with nested columns."
   },
   "Bootstrap Responsive Embed -SnipGenius": {
-    "prefix": "embed",
+    "prefix": "embedResponsive",
     "body": [
       "<div class=\"embed-responsive embed-responsive-${1:16by9}\">",
       "    <iframe class=\"embed-responsive-item\" src=\"${2:https://www.youtube.com/embed/tgbNymZ7vqY}\" allowfullscreen></iframe>",
